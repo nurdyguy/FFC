@@ -1,0 +1,46 @@
+﻿@model FantasyFootballCorner.ViewModels.PlayerDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Player</legend>
+
+    <div >
+        <img src="@Html.DisplayFor(model => model.playerBackground.imageUrl)" style="height:150px; width:150px;"/>
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.player.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.player.name)
+    </div>
+    
+    <div class="display-field">
+        @Html.DisplayFor(model => model.player.playerId)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.player.teamAbbre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.player.teamAbbre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.player.position)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.player.position)
+    </div>
+
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.player.playerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,180 @@
+﻿@model IEnumerable<FantasyFootballCorner.ViewModels.PlayerIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Player Index</h1>
+<br />
+<div id="idPlayerPreview"></div>
+<br />
+<script type="text/javascript">                    
+    var arrPlayers = [];
+</script>
+<div class="row">
+
+@using (Html.BeginForm("Index", "Player", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div style="max-width:200px; float:left; display:inline-block;">
+        <div class="form-group ">
+            <label class="control-label " for="inputSmall">Player Name</label>
+            @Html.TextBox("Name", "", new {@class="form-control "})
+        </div>
+        <div class=" form-group ">
+            <label class="control-label ">Position</label>
+            <div class="">
+                <select class="dropdown form-control" name="position">
+                    <option value="ALL">Any Position</option>
+                    <option value="QB">Quarter Backs</option>
+                    <option value="RB">Running Backs</option>
+                    <option value="WR">Wide Receivers</option>
+                    <option value="TE">Tight Ends</option>
+                    <option value="K">Kickers</option>
+                    <option value="DEF">Defense/Special Teams</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+    
+}
+    <div  id="" style=" float:right; display:inline-block;">
+        <div style="width:100%; text-align:center">Compare Players (select up to 5)</div>
+        <div id="playerCompare_0" class="playerCompareBlock">
+
+        </div>  
+        <div id="playerCompare_1" class="playerCompareBlock">
+
+        </div>
+        <div id="playerCompare_2" class="playerCompareBlock">
+
+        </div>
+        <div id="playerCompare_3" class="playerCompareBlock">
+
+        </div>
+        <div id="playerCompare_4" class="playerCompareBlock">
+
+        </div>
+    
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-md-6" style="display: inline-block">
+        <table class="table table-striped table-hover " >
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.player.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.player.teamAbbre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.player.position)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (dynamic player in this.ViewBag.data)
+            {
+                
+                <tr class="success ui-dragable playerRow"  style="display: none;">
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>
+                        @Html.ActionLink( (string)player.playerName, "Details", new { id = (int)player.playerID }, new { @class = "detailsLink" })
+                    </td>
+                    <td>
+                        @player.teamName
+                    </td>
+                    <td>
+                        @player.position
+                    </td>
+                    <td>
+                        <img src="..\..\Content\images\drag_arrow-hi.png" height="25" width="25" />
+                     </td>
+                </tr>
+                <script type="text/javascript">                    
+                    arrPlayers[@player.playerID] = {name: '@player.playerName',
+                        position: '@player.position', team: '@player.teamAbbre',
+                        height: '@player.height', weight: '@player.weight',
+                        dob: '@player.dob', college: '@player.college',
+                        pic: '@player.imageUrl', years: '@player.years'};                                
+                </script>
+            }
+        </table>
+        <ul class="pagination pagination-sm" id="pager" >
+        </ul>
+    </div>
+    <div id="divPlayerPreview" class="col-lg-4  col-md-4" style="display: inline-block; ">
+        <div>Preview:</div>
+        <div class="playerPreview">
+            <div id="previewName"></div>
+            <div style="width:100%;">
+                <img id="previewImage" width="200px" height="200px"/>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    
+    $(function () {
+        var tableLen = $('table').find('tr.success').length;
+        var html = '<li class="disabled"><a onclick="page(next)">«</a></li>';
+        html += '<li class="active"><a onclick="page(this)">1</a></li>';
+        for (var i = 2; i < parseInt(tableLen / 10) + 1; i++)
+            html += '<li ><a  onclick="page(this)">' + i + '</a></li>';
+        html += '<li><a onclick="page(prev)">»</a></li>';
+
+        $('#pager').html(html);
+
+        for (var i = 0; i < 10; i++)
+            $('table').find('tr.success').eq(i).show();
+    });
+
+    function page(ptr)
+    {
+        if (ptr == 'next')
+        {
+            return;
+        }
+        if (ptr == 'prev')
+        {
+            return;
+        }
+
+
+        $('#pager').find('li').removeClass('active');
+        $(ptr).addClass('active');
+        var num = parseInt($(ptr).text());
+        var $rows = $('table').find('tr.success');
+        $rows.hide(); 
+        for (var i = (num - 1) * 10; i < num * 10; i++)
+            $rows.eq(i).show();
+    }
+
+    $('tr.playerRow').on('click', function()
+    {
+        var pid = $(this).attr('pid');
+        $('#previewImage').prop('src', arrPlayers[pid].pic);
+        $('#previewName').text(arrPlayers[pid].name);
+
+    });
+    
+    
+</script>
+

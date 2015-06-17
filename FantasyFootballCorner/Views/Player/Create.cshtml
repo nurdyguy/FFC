@@ -1,0 +1,61 @@
+﻿@model FantasyFootballCorner.Models.Player
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Player</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.playerId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.playerId)
+            @Html.ValidationMessageFor(model => model.playerId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.teamAbbre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.teamAbbre)
+            @Html.ValidationMessageFor(model => model.teamAbbre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.position)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.position)
+            @Html.ValidationMessageFor(model => model.position)
+        </div>
+
+        <p>
+            <input type="submit" id="submit" value="Create" class="btn btn-primary btn-lg"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+<button id="Button1" class="btn btn-info" onclick="GetNFLStats()" >Get Stats</button>
+
+

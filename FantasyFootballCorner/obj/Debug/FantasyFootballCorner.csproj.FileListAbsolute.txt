@@ -1,0 +1,227 @@
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\FantasyFootballCorner.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\FantasyFootballCorner.pdb
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Antlr3.Runtime.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.Core.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\EntityFramework.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Data.Edm.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Data.OData.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Newtonsoft.Json.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\PagedList.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\PagedList.Mvc.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Spatial.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Helpers.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Http.OData.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Mvc.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Optimization.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Razor.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.Razor.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\WebGrease.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\WebMatrix.Data.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\WebMatrix.WebData.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\PagedList.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\PagedList.Mvc.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\EntityFramework.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Newtonsoft.Json.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Helpers.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Mvc.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Razor.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.WebPages.Razor.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\WebMatrix.Data.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\WebMatrix.WebData.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.Core.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Web.Http.OData.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Data.Edm.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\Microsoft.Data.OData.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\System.Spatial.xml
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\de\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\es\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\fr\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\it\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ja\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ko\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\ru\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.InitialCreate.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.InitialCreate1.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player1.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player2.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player3.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.stat.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player4.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player5.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player6.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player7.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player8.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player9.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player10.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player11.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.csproj.GenerateResource.Cache
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.dll
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.pdb
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player12.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player13.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player14.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player15.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player16.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player17.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player18.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player19.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player20.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player21.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player22.resources
+C:\Users\Your Face\documents\visual studio 2012\Projects\FantasyFootballCorner\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.csprojResolveAssemblyReference.cache
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\FantasyFootballCorner.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\FantasyFootballCorner.pdb
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Antlr3.Runtime.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.Core.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\EntityFramework.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Data.Edm.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Data.OData.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Newtonsoft.Json.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\PagedList.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\PagedList.Mvc.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Net.Http.Formatting.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Spatial.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Helpers.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.OData.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.WebHost.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Mvc.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Optimization.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Razor.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.Deployment.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.Razor.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\WebGrease.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\WebMatrix.Data.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\WebMatrix.WebData.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\PagedList.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\PagedList.Mvc.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\EntityFramework.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Newtonsoft.Json.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Net.Http.Formatting.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Helpers.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.WebHost.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Mvc.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Razor.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.Deployment.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.WebPages.Razor.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\WebMatrix.Data.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\WebMatrix.WebData.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.Core.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Web.Http.OData.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Data.Edm.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\Microsoft.Data.OData.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\System.Spatial.xml
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\de\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\es\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\fr\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\it\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ja\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ko\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\ru\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.InitialCreate.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.InitialCreate1.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player1.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player2.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player3.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.stat.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player4.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player5.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player6.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player7.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player8.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player9.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player10.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player11.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player12.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player13.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player14.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player15.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player16.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player17.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player18.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player19.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player20.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player21.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player22.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.csproj.GenerateResource.Cache
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.pdb
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player23.resources
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.player24.resources

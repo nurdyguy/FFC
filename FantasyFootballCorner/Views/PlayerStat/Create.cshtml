@@ -1,0 +1,75 @@
+﻿@model FantasyFootballCorner.Models.PlayerStat
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PlayerStat</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statNum)
+            @Html.ValidationMessageFor(model => model.statNum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statValue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statValue)
+            @Html.ValidationMessageFor(model => model.statValue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.playerId, "player")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("playerId", String.Empty)
+            @Html.ValidationMessageFor(model => model.playerId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.season)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.season)
+            @Html.ValidationMessageFor(model => model.season)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.weekNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.weekNum)
+            @Html.ValidationMessageFor(model => model.weekNum)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<button id="Button1" class="btn btn-info" onclick="GetNFLStats(3, 2014)" >Run Script</button>
+
+
+
+<script>
+    
+
+
+</script>
+

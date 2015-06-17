@@ -1,0 +1,91 @@
+﻿
+
+#tablePlayers 
+{
+    white-space:nowrap;
+    
+}
+
+#tablePlayers td:nth-child(n+5)
+{
+    text-align:center;
+}
+
+.playerCompareBlock 
+{
+    float:left;
+    display:inline-block;
+    height:222px;
+    width:150px;
+    border: 1px grey dashed;
+    position:relative;
+}
+
+.comparePlayerImage
+{
+    
+}
+
+.compareRemoveButton 
+{
+    margin-left:30%;
+}
+
+a.detailsLink 
+{
+    color:#fff;
+}
+
+.playerPreview 
+{
+    
+    height:300px;
+    width:300px;
+    border: 1px grey dashed;
+
+}
+
+#previewName, .comparePlayerName
+{
+    width:100%;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    height:45px;
+}
+
+#previewImage
+{
+    margin-left:49px;
+}
+
+.divDropHere 
+{
+    height:150px;
+    width:150px;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    border: 5px solid grey;
+    
+}
+
+#divPlayerDragImage
+{
+    display:none;
+    
+    height:30px;
+    width:30px;
+}
+
+#imgPlayerDrag
+{
+    position:absolute;
+    height:30px;
+    width:30px;
+}
+
+.warningText
+{
+    color: red;
+}

@@ -1,0 +1,763 @@
+﻿@model FantasyFootballCorner.Models.WeekStat
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WeekStat</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.playerId, "player")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("playerId", String.Empty)
+            @Html.ValidationMessageFor(model => model.playerId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_1)
+            @Html.ValidationMessageFor(model => model.statCat_1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_2)
+            @Html.ValidationMessageFor(model => model.statCat_2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_3)
+            @Html.ValidationMessageFor(model => model.statCat_3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_4)
+            @Html.ValidationMessageFor(model => model.statCat_4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_5)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_5)
+            @Html.ValidationMessageFor(model => model.statCat_5)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_6)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_6)
+            @Html.ValidationMessageFor(model => model.statCat_6)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_7)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_7)
+            @Html.ValidationMessageFor(model => model.statCat_7)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_8)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_8)
+            @Html.ValidationMessageFor(model => model.statCat_8)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_9)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_9)
+            @Html.ValidationMessageFor(model => model.statCat_9)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_10)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_10)
+            @Html.ValidationMessageFor(model => model.statCat_10)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_11)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_11)
+            @Html.ValidationMessageFor(model => model.statCat_11)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_12)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_12)
+            @Html.ValidationMessageFor(model => model.statCat_12)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_13)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_13)
+            @Html.ValidationMessageFor(model => model.statCat_13)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_14)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_14)
+            @Html.ValidationMessageFor(model => model.statCat_14)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_15)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_15)
+            @Html.ValidationMessageFor(model => model.statCat_15)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_16)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_16)
+            @Html.ValidationMessageFor(model => model.statCat_16)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_17)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_17)
+            @Html.ValidationMessageFor(model => model.statCat_17)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_18)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_18)
+            @Html.ValidationMessageFor(model => model.statCat_18)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_19)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_19)
+            @Html.ValidationMessageFor(model => model.statCat_19)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_20)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_20)
+            @Html.ValidationMessageFor(model => model.statCat_20)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_21)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_21)
+            @Html.ValidationMessageFor(model => model.statCat_21)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_22)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_22)
+            @Html.ValidationMessageFor(model => model.statCat_22)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_23)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_23)
+            @Html.ValidationMessageFor(model => model.statCat_23)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_24)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_24)
+            @Html.ValidationMessageFor(model => model.statCat_24)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_25)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_25)
+            @Html.ValidationMessageFor(model => model.statCat_25)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_26)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_26)
+            @Html.ValidationMessageFor(model => model.statCat_26)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_27)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_27)
+            @Html.ValidationMessageFor(model => model.statCat_27)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_28)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_28)
+            @Html.ValidationMessageFor(model => model.statCat_28)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_29)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_29)
+            @Html.ValidationMessageFor(model => model.statCat_29)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_30)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_30)
+            @Html.ValidationMessageFor(model => model.statCat_30)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_31)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_31)
+            @Html.ValidationMessageFor(model => model.statCat_31)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_32)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_32)
+            @Html.ValidationMessageFor(model => model.statCat_32)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_33)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_33)
+            @Html.ValidationMessageFor(model => model.statCat_33)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_34)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_34)
+            @Html.ValidationMessageFor(model => model.statCat_34)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_35)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_35)
+            @Html.ValidationMessageFor(model => model.statCat_35)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_36)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_36)
+            @Html.ValidationMessageFor(model => model.statCat_36)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_37)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_37)
+            @Html.ValidationMessageFor(model => model.statCat_37)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_38)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_38)
+            @Html.ValidationMessageFor(model => model.statCat_38)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_39)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_39)
+            @Html.ValidationMessageFor(model => model.statCat_39)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_40)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_40)
+            @Html.ValidationMessageFor(model => model.statCat_40)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_41)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_41)
+            @Html.ValidationMessageFor(model => model.statCat_41)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_42)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_42)
+            @Html.ValidationMessageFor(model => model.statCat_42)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_43)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_43)
+            @Html.ValidationMessageFor(model => model.statCat_43)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_44)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_44)
+            @Html.ValidationMessageFor(model => model.statCat_44)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_45)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_45)
+            @Html.ValidationMessageFor(model => model.statCat_45)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_46)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_46)
+            @Html.ValidationMessageFor(model => model.statCat_46)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_47)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_47)
+            @Html.ValidationMessageFor(model => model.statCat_47)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_48)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_48)
+            @Html.ValidationMessageFor(model => model.statCat_48)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_49)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_49)
+            @Html.ValidationMessageFor(model => model.statCat_49)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_50)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_50)
+            @Html.ValidationMessageFor(model => model.statCat_50)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_51)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_51)
+            @Html.ValidationMessageFor(model => model.statCat_51)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_52)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_52)
+            @Html.ValidationMessageFor(model => model.statCat_52)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_53)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_53)
+            @Html.ValidationMessageFor(model => model.statCat_53)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_54)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_54)
+            @Html.ValidationMessageFor(model => model.statCat_54)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_55)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_55)
+            @Html.ValidationMessageFor(model => model.statCat_55)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_56)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_56)
+            @Html.ValidationMessageFor(model => model.statCat_56)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_57)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_57)
+            @Html.ValidationMessageFor(model => model.statCat_57)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_58)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_58)
+            @Html.ValidationMessageFor(model => model.statCat_58)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_59)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_59)
+            @Html.ValidationMessageFor(model => model.statCat_59)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_60)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_60)
+            @Html.ValidationMessageFor(model => model.statCat_60)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_61)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_61)
+            @Html.ValidationMessageFor(model => model.statCat_61)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_62)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_62)
+            @Html.ValidationMessageFor(model => model.statCat_62)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_63)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_63)
+            @Html.ValidationMessageFor(model => model.statCat_63)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_64)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_64)
+            @Html.ValidationMessageFor(model => model.statCat_64)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_65)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_65)
+            @Html.ValidationMessageFor(model => model.statCat_65)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_66)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_66)
+            @Html.ValidationMessageFor(model => model.statCat_66)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_67)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_67)
+            @Html.ValidationMessageFor(model => model.statCat_67)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_68)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_68)
+            @Html.ValidationMessageFor(model => model.statCat_68)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_69)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_69)
+            @Html.ValidationMessageFor(model => model.statCat_69)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_70)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_70)
+            @Html.ValidationMessageFor(model => model.statCat_70)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_71)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_71)
+            @Html.ValidationMessageFor(model => model.statCat_71)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_72)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_72)
+            @Html.ValidationMessageFor(model => model.statCat_72)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_73)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_73)
+            @Html.ValidationMessageFor(model => model.statCat_73)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_74)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_74)
+            @Html.ValidationMessageFor(model => model.statCat_74)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_75)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_75)
+            @Html.ValidationMessageFor(model => model.statCat_75)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_76)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_76)
+            @Html.ValidationMessageFor(model => model.statCat_76)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_77)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_77)
+            @Html.ValidationMessageFor(model => model.statCat_77)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_78)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_78)
+            @Html.ValidationMessageFor(model => model.statCat_78)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_79)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_79)
+            @Html.ValidationMessageFor(model => model.statCat_79)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_80)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_80)
+            @Html.ValidationMessageFor(model => model.statCat_80)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_81)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_81)
+            @Html.ValidationMessageFor(model => model.statCat_81)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_82)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_82)
+            @Html.ValidationMessageFor(model => model.statCat_82)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_83)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_83)
+            @Html.ValidationMessageFor(model => model.statCat_83)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_84)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_84)
+            @Html.ValidationMessageFor(model => model.statCat_84)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_85)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_85)
+            @Html.ValidationMessageFor(model => model.statCat_85)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_86)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_86)
+            @Html.ValidationMessageFor(model => model.statCat_86)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_87)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_87)
+            @Html.ValidationMessageFor(model => model.statCat_87)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_88)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_88)
+            @Html.ValidationMessageFor(model => model.statCat_88)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_89)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_89)
+            @Html.ValidationMessageFor(model => model.statCat_89)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_90)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_90)
+            @Html.ValidationMessageFor(model => model.statCat_90)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statCat_91)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statCat_91)
+            @Html.ValidationMessageFor(model => model.statCat_91)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

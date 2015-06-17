@@ -1,0 +1,64 @@
+﻿@model FantasyFootballCorner.Models.PlayerBackground
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PlayerBackground</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.weight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dob)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dob)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.college)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.college)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.highSchool)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.highSchool)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.draftYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.draftYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.picUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.picUrl)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

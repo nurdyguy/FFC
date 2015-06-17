@@ -1,0 +1,50 @@
+﻿@model FantasyFootballCorner.Models.PlayerStat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PlayerStat</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.statNum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.statNum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.statValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.statValue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.player.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.player.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.season)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.season)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.weekNum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.weekNum)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

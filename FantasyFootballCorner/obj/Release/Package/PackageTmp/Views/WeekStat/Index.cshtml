@@ -1,0 +1,298 @@
+﻿@model IEnumerable<FantasyFootballCorner.Models.WeekStat>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.player.playerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_16)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_17)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_18)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_19)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_20)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_21)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_23)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_24)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_26)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_27)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_28)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_29)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_30)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_31)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_32)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_33)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_34)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_35)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_36)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_37)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_38)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_39)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_40)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_41)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_42)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_43)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_44)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_45)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_46)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_47)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_48)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_49)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_50)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_51)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_52)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_53)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_54)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_55)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_56)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_57)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_58)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_59)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_60)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_61)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_62)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_63)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_64)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_65)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_66)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_67)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_68)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_69)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_70)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_71)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_72)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_73)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_74)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_75)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_76)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_77)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_78)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_79)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_80)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_81)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_82)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_83)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_84)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_85)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_86)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_87)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_88)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_89)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_90)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statCat_91)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+</table>
+
+
+<button class="btn btn-info" onclick="UpdateWeekStats({week:1,year:2011})">Get Stats</button>

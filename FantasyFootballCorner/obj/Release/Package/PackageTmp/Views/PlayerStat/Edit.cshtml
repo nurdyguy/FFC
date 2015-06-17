@@ -1,0 +1,70 @@
+﻿@model FantasyFootballCorner.Models.PlayerStat
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PlayerStat</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statNum)
+            @Html.ValidationMessageFor(model => model.statNum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.statValue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.statValue)
+            @Html.ValidationMessageFor(model => model.statValue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.playerId, "player")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("playerId", String.Empty)
+            @Html.ValidationMessageFor(model => model.playerId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.season)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.season)
+            @Html.ValidationMessageFor(model => model.season)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.weekNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.weekNum)
+            @Html.ValidationMessageFor(model => model.weekNum)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

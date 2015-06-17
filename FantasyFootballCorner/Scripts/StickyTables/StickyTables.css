@@ -1,0 +1,66 @@
+﻿body {
+}
+
+
+
+tr.stickyRow
+{
+}
+
+div.stickyDivWrapper
+{
+    position:relative;
+}
+
+div.stickyDivScroll
+{
+    height:100%;
+    overflow-x:scroll;
+}
+
+table.stickyTable
+{
+    top:0;
+    left:0;
+}
+
+table.stickyLeftTable
+{
+    position:absolute;
+    top:0;
+    left:0;
+    border-right:1px solid navy;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

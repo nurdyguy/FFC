@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+
+        <script type="text/javascript" src="@Url.Content("/Scripts/ffc_js/api_queries.js")"></script>
+        
+        
+        <script type="text/javascript" src="@Url.Content("/Scripts/StickyTables/StickyTables.js")"></script>
+        <link href="@Url.Content("/Scripts/StickyTables/StickyTables.css")" rel="stylesheet">
+        
+        <script type="text/javascript" src="/Scripts/Highcharts/js/highcharts.js"></script>
+        
+      
+        <link href="../../Content/bootstrap.css" rel="stylesheet">
+        <link href="../../Content/ffc/ffc.css" rel="stylesheet">
+        
+        
+    </head>
+    <body style="min-height:1000px;"> 
+        <header>
+            <div class="jumbotron" style="background-image:url(../../Images/field-665x385.jpg);">
+                
+                <!--style="background-image:url(http://www.lightheadedbeds.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/0/30157-00-rfr_football_field_1600px_1.jpg);"-->
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p class="site-title">@Html.ActionLink("Fantasy Football Corner", "Index", "Home")</p>
+                    </div>
+                    <div class="float-right">
+                        <section id="login">
+                            @Html.Partial("_LoginPartial")
+                        </section>
+                        <nav>
+                            <ul id="menu">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="body" class="container" style="background-color:#272b30;">
+            @RenderSection("featured", required: false)
+            
+            @RenderBody()
+        </div>
+        <footer style="background-color:#272b30;">
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>*This website is for entertainment purposes only and is in no way associated with the NFL nor any of its affiliates.*</p>
+                </div>
+            </div>
+        </footer>
+
+        
+        
+    </body>
+</html>
