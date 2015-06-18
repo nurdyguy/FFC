@@ -74,6 +74,7 @@ namespace FantasyFootballCorner.Controllers
             RedirectToAction("Index");
         }
 
+        // posted from Player/Index
         [HttpPost]
         public ActionResult Compare(FormCollection f)
         {
@@ -117,7 +118,7 @@ namespace FantasyFootballCorner.Controllers
 
             if(position == "QB")
             {
-                /*
+                
                 var statAggs = from sw in db.WeekStats
                                where sw.season == 2014
                                group sw by sw.playerId into ps
@@ -150,7 +151,7 @@ namespace FantasyFootballCorner.Controllers
                                   statCat_31 = s.statCat_31, statCat_32 = s.statCat_32
                                   
                               };
-                 */
+                 /*
                 var weekStats = from p in db.Players
                                 join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
                                 join w in db.WeekStats on p.playerId equals w.playerId 
@@ -203,8 +204,8 @@ namespace FantasyFootballCorner.Controllers
 
                                 };
                
-
-                return View(weekStats);
+                */
+                return View(players);
             }
             
             if (position == "RB" || position == "WR" || position == "TE")
@@ -345,6 +346,7 @@ namespace FantasyFootballCorner.Controllers
             return RedirectToAction("Index");
         }
 
+        // old version returns all stats
         [HttpPost]
         public ActionResult Compare2(FormCollection f)
         {
@@ -430,7 +432,427 @@ namespace FantasyFootballCorner.Controllers
             return View(players);
         }
 
+        // posted from Player/Index
+        [HttpPost]
+        public ActionResult Compare3(FormCollection f)
+        {
 
+            int player0, player1, player2, player3, player4;
+            player0 = Convert.ToInt32(Request.Form["player0"]);
+            player1 = Convert.ToInt32(Request.Form["player1"]);
+            player2 = Convert.ToInt32(Request.Form["player2"]);
+            player3 = Convert.ToInt32(Request.Form["player3"]);
+            player4 = Convert.ToInt32(Request.Form["player4"]);
+
+            string position;
+
+            // pick up the first player entry and grab his position
+            if (player0 != -1)
+            {
+                position = db.Players.Find(player0).position;
+            }
+            else
+                if (player1 != -1)
+                {
+                    position = db.Players.Find(player1).position;
+                }
+                else
+                    if (player2 != -1)
+                    {
+                        position = db.Players.Find(player2).position;
+                    }
+                    else
+                        if (player3 != -1)
+                        {
+                            position = db.Players.Find(player3).position;
+                        }
+                        else
+                            if (player4 != -1)
+                            {
+                                position = db.Players.Find(player4).position;
+                            }
+                            else // if no players then redirect
+                                return RedirectToAction("Index");
+
+            if (position == "QB")
+            {
+
+                var statAggs = from sw in db.WeekStats
+                               where sw.season == 2014
+                               group sw by sw.playerId into ps
+                               select new //WeekStat
+                               {
+                                   playerId = ps.Key,
+                                   statCat_1 = ps.Sum(x => x.statCat_1),
+                                   statCat_2 = ps.Sum(x => x.statCat_2),
+                                   statCat_3 = ps.Sum(x => x.statCat_3),
+                                   statCat_4 = ps.Sum(x => x.statCat_4),
+                                   statCat_5 = ps.Sum(x => x.statCat_5),
+                                   statCat_6 = ps.Sum(x => x.statCat_6),
+                                   statCat_7 = ps.Sum(x => x.statCat_7),
+                                   statCat_8 = ps.Sum(x => x.statCat_8),
+                                   statCat_9 = ps.Sum(x => x.statCat_9),
+                                   statCat_10 = ps.Sum(x => x.statCat_10),
+                                   statCat_11 = ps.Sum(x => x.statCat_11),
+                                   statCat_12 = ps.Sum(x => x.statCat_12),
+                                   statCat_13 = ps.Sum(x => x.statCat_13),
+                                   statCat_14 = ps.Sum(x => x.statCat_14),
+                                   statCat_15 = ps.Sum(x => x.statCat_15),
+                                   statCat_16 = ps.Sum(x => x.statCat_16),
+                                   statCat_17 = ps.Sum(x => x.statCat_17),
+                                   statCat_18 = ps.Sum(x => x.statCat_18),
+                                   statCat_19 = ps.Sum(x => x.statCat_19),
+                                   statCat_30 = ps.Sum(x => x.statCat_30),
+                                   statCat_31 = ps.Sum(x => x.statCat_31),
+                                   statCat_32 = ps.Sum(x => x.statCat_32)
+
+                               };
+                var players = from p in db.Players
+                              join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
+                              join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                              join s in statAggs on p.playerId equals s.playerId
+                              where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                              orderby s.statCat_1 descending
+                              select new PlayerIndexViewModel
+                              {
+                                  player = p,
+                                  playerBackground = pb,
+                                  team = t,
+                                  statCat_1 = s.statCat_1,
+                                  statCat_2 = s.statCat_2,
+                                  statCat_3 = s.statCat_3,
+                                  statCat_4 = s.statCat_4,
+                                  statCat_5 = s.statCat_5,
+                                  statCat_6 = s.statCat_6,
+                                  statCat_7 = s.statCat_7,
+                                  statCat_8 = s.statCat_8,
+                                  statCat_9 = s.statCat_9,
+                                  statCat_10 = s.statCat_10,
+                                  statCat_11 = s.statCat_11,
+                                  statCat_12 = s.statCat_12,
+                                  statCat_13 = s.statCat_13,
+                                  statCat_14 = s.statCat_14,
+                                  statCat_15 = s.statCat_15,
+                                  statCat_16 = s.statCat_16,
+                                  statCat_17 = s.statCat_17,
+                                  statCat_18 = s.statCat_18,
+                                  statCat_19 = s.statCat_19,
+                                  statCat_30 = s.statCat_30,
+                                  statCat_31 = s.statCat_31,
+                                  statCat_32 = s.statCat_32
+
+                              };
+                /*
+               var weekStats = from p in db.Players
+                               join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
+                               join w in db.WeekStats on p.playerId equals w.playerId 
+                               join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                                
+                               where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                                   && w.season == 2014
+                               orderby w.weekNum, p.playerName
+                               select new PlayerIndexViewModel
+                               {
+                                   player = p,
+                                   playerBackground = pb,
+                                   team = t,
+                                   weekStat = w,
+                                   statCat_1 = w.statCat_1,
+                                   statCat_2 = w.statCat_2,
+                                   statCat_3 = w.statCat_3,
+                                   statCat_4 = w.statCat_4,
+                                   statCat_5 = w.statCat_5,
+                                   statCat_6 = w.statCat_6,
+                                   statCat_7 = w.statCat_7,
+                                   statCat_8 = w.statCat_8,
+                                   statCat_9 = w.statCat_9,
+                                   statCat_10 = w.statCat_10,
+                                   statCat_11 = w.statCat_11,
+                                   statCat_12 = w.statCat_12,
+                                   statCat_13 = w.statCat_13,
+                                   statCat_14 = w.statCat_14,
+                                   statCat_15 = w.statCat_15,
+                                   statCat_16 = w.statCat_16,
+                                   statCat_17 = w.statCat_17,
+                                   statCat_18 = w.statCat_18,
+                                   statCat_19 = w.statCat_19,
+                                   statCat_30 = w.statCat_30,
+                                   statCat_31 = w.statCat_31,
+                                   statCat_32 = w.statCat_32
+                                    
+                               };
+                 
+               var weekStats2 = from w in db.WeekStats
+                               where (w.playerId == player0 || w.playerId == player1 || w.playerId == player2 || w.playerId == player3 || w.playerId == player4)
+                                   && w.season == 2014
+                               select new PlayerIndexViewModel
+                               {
+                                   player = w.player,
+                                    
+                                   team = w.player.Team,
+                                   weekStat = w,
+                                   statCat_5 = w.statCat_5
+
+                               };
+               
+               */
+                return View(players);
+            }
+
+            if (position == "RB" || position == "WR" || position == "TE")
+            {
+                var statAggs = from sw in db.WeekStats
+                               where sw.season == 2014
+                               group sw by sw.playerId into ps
+                               select new //WeekStat
+                               {
+                                   playerId = ps.Key,
+                                   statCat_1 = ps.Sum(x => x.statCat_1),
+                                   statCat_13 = ps.Sum(x => x.statCat_13),
+                                   statCat_14 = ps.Sum(x => x.statCat_14),
+                                   statCat_15 = ps.Sum(x => x.statCat_15),
+                                   statCat_16 = ps.Sum(x => x.statCat_16),
+                                   statCat_17 = ps.Sum(x => x.statCat_17),
+                                   statCat_18 = ps.Sum(x => x.statCat_18),
+                                   statCat_19 = ps.Sum(x => x.statCat_19),
+                                   statCat_20 = ps.Sum(x => x.statCat_20),
+                                   statCat_21 = ps.Sum(x => x.statCat_21),
+                                   statCat_22 = ps.Sum(x => x.statCat_22),
+                                   statCat_23 = ps.Sum(x => x.statCat_23),
+                                   statCat_24 = ps.Sum(x => x.statCat_24),
+                                   statCat_25 = ps.Sum(x => x.statCat_25),
+                                   statCat_26 = ps.Sum(x => x.statCat_26),
+                                   statCat_27 = ps.Sum(x => x.statCat_27),
+                                   statCat_30 = ps.Sum(x => x.statCat_30),
+                                   statCat_31 = ps.Sum(x => x.statCat_31),
+                                   statCat_32 = ps.Sum(x => x.statCat_32)
+                               };
+
+                var players = from p in db.Players
+                              join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
+                              join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                              join s in statAggs on p.playerId equals s.playerId
+                              where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                              orderby s.statCat_1 descending
+                              select new PlayerIndexViewModel
+                              {
+                                  player = p,
+                                  playerBackground = pb,
+                                  team = t,
+                                  statCat_1 = s.statCat_1,
+                                  statCat_13 = s.statCat_13,
+                                  statCat_14 = s.statCat_14,
+                                  statCat_15 = s.statCat_15,
+                                  statCat_16 = s.statCat_16,
+                                  statCat_17 = s.statCat_17,
+                                  statCat_18 = s.statCat_18,
+                                  statCat_19 = s.statCat_19,
+                                  statCat_20 = s.statCat_20,
+                                  statCat_21 = s.statCat_21,
+                                  statCat_22 = s.statCat_22,
+                                  statCat_23 = s.statCat_23,
+                                  statCat_24 = s.statCat_24,
+                                  statCat_25 = s.statCat_25,
+                                  statCat_26 = s.statCat_26,
+                                  statCat_27 = s.statCat_27,
+                                  statCat_30 = s.statCat_30,
+                                  statCat_31 = s.statCat_31,
+                                  statCat_32 = s.statCat_32
+                              };
+
+                var weekStats = from p in db.Players
+                                join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                                join w in db.WeekStats on p.playerId equals w.playerId
+                                where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                                    && w.season == 2014
+                                select new PlayerIndexViewModel
+                                {
+                                    player = p,
+                                    team = t,
+                                    weekStat = w
+                                };
+                return View(players);
+
+            }
+
+            if (position == "K")
+            {
+                var statAggs = from sw in db.WeekStats
+                               where sw.season == 2014
+                               group sw by sw.playerId into ps
+                               select new //WeekStat
+                               {
+                                   playerId = ps.Key,
+                                   statCat_1 = ps.Sum(x => x.statCat_1),
+                                   statCat_33 = ps.Sum(x => x.statCat_33),
+                                   statCat_34 = ps.Sum(x => x.statCat_34),
+                                   statCat_35 = ps.Sum(x => x.statCat_35),
+                                   statCat_36 = ps.Sum(x => x.statCat_36),
+                                   statCat_37 = ps.Sum(x => x.statCat_37),
+                                   statCat_38 = ps.Sum(x => x.statCat_38),
+                                   statCat_39 = ps.Sum(x => x.statCat_39),
+                                   statCat_40 = ps.Sum(x => x.statCat_40),
+                                   statCat_41 = ps.Sum(x => x.statCat_41),
+                                   statCat_42 = ps.Sum(x => x.statCat_42),
+                                   statCat_43 = ps.Sum(x => x.statCat_43),
+                                   statCat_44 = ps.Sum(x => x.statCat_44)
+                               };
+
+                var players = from p in db.Players
+                              join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
+                              join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                              join s in statAggs on p.playerId equals s.playerId
+                              where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                              orderby s.statCat_1 descending
+                              select new PlayerIndexViewModel
+                              {
+                                  player = p,
+                                  playerBackground = pb,
+                                  team = t,
+                                  statCat_1 = s.statCat_1,
+                                  statCat_33 = s.statCat_33,
+                                  statCat_34 = s.statCat_34,
+                                  statCat_35 = s.statCat_35,
+                                  statCat_36 = s.statCat_36,
+                                  statCat_37 = s.statCat_37,
+                                  statCat_38 = s.statCat_38,
+                                  statCat_39 = s.statCat_39,
+                                  statCat_40 = s.statCat_40,
+                                  statCat_41 = s.statCat_41,
+                                  statCat_42 = s.statCat_42,
+                                  statCat_43 = s.statCat_43,
+                                  statCat_44 = s.statCat_44
+                              };
+
+                var weekStats = from p in db.Players
+                                join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                                join w in db.WeekStats on p.playerId equals w.playerId
+                                where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                                    && w.season == 2014
+                                select new PlayerIndexViewModel
+                                {
+                                    player = p,
+                                    team = t,
+                                    weekStat = w
+                                };
+                return View(players);
+            }
+
+            if (position == "DEF")
+            {
+                var statAggs = from sw in db.WeekStats
+                               where sw.season == 2014
+                               group sw by sw.playerId into ps
+                               select new //WeekStat
+                               {
+                                   playerId = ps.Key,
+                                   statCat_1 = ps.Sum(x => x.statCat_1),
+                                   statCat_45 = ps.Sum(x => x.statCat_45),
+                                   statCat_46 = ps.Sum(x => x.statCat_46),
+                                   statCat_47 = ps.Sum(x => x.statCat_47),
+                                   statCat_48 = ps.Sum(x => x.statCat_48),
+                                   statCat_49 = ps.Sum(x => x.statCat_49),
+                                   statCat_50 = ps.Sum(x => x.statCat_50),
+                                   statCat_51 = ps.Sum(x => x.statCat_51),
+                                   statCat_52 = ps.Sum(x => x.statCat_52),
+                                   statCat_53 = ps.Sum(x => x.statCat_53),
+                                   statCat_54 = ps.Sum(x => x.statCat_54),
+                                   statCat_55 = ps.Sum(x => x.statCat_55),
+                                   statCat_56 = ps.Sum(x => x.statCat_56),
+                                   statCat_57 = ps.Sum(x => x.statCat_57),
+                                   statCat_58 = ps.Sum(x => x.statCat_58),
+                                   statCat_59 = ps.Sum(x => x.statCat_59),
+                                   statCat_60 = ps.Sum(x => x.statCat_60),
+                                   statCat_61 = ps.Sum(x => x.statCat_61),
+                                   statCat_62 = ps.Sum(x => x.statCat_62),
+                                   statCat_63 = ps.Sum(x => x.statCat_63),
+                                   statCat_64 = ps.Sum(x => x.statCat_64),
+                                   statCat_65 = ps.Sum(x => x.statCat_65),
+                                   statCat_66 = ps.Sum(x => x.statCat_66),
+                                   statCat_67 = ps.Sum(x => x.statCat_67),
+                                   statCat_68 = ps.Sum(x => x.statCat_68),
+                                   statCat_69 = ps.Sum(x => x.statCat_69)
+                               };
+
+                var players = from p in db.Players
+                              join pb in db.PlayerBackgrounds on p.playerId equals pb.playerID
+                              join t in db.Teams on p.teamAbbre equals t.teamAbbre
+                              join s in statAggs on p.playerId equals s.playerId
+                              where (p.playerId == player0 || p.playerId == player1 || p.playerId == player2 || p.playerId == player3 || p.playerId == player4)
+                              orderby s.statCat_1 descending
+                              select new PlayerIndexViewModel
+                              {
+                                  player = p,
+                                  playerBackground = pb,
+                                  team = t,
+                                  statCat_1 = s.statCat_1,
+                                  statCat_45 = s.statCat_45,
+                                  statCat_46 = s.statCat_46,
+                                  statCat_47 = s.statCat_47,
+                                  statCat_48 = s.statCat_48,
+                                  statCat_49 = s.statCat_49,
+                                  statCat_50 = s.statCat_50,
+                                  statCat_51 = s.statCat_51,
+                                  statCat_52 = s.statCat_52,
+                                  statCat_53 = s.statCat_53,
+                                  statCat_54 = s.statCat_54,
+                                  statCat_55 = s.statCat_55,
+                                  statCat_56 = s.statCat_56,
+                                  statCat_57 = s.statCat_57,
+                                  statCat_58 = s.statCat_58,
+                                  statCat_59 = s.statCat_59,
+                                  statCat_60 = s.statCat_60,
+                                  statCat_61 = s.statCat_61,
+                                  statCat_62 = s.statCat_62,
+                                  statCat_63 = s.statCat_63,
+                                  statCat_64 = s.statCat_64,
+                                  statCat_65 = s.statCat_65,
+                                  statCat_66 = s.statCat_66,
+                                  statCat_67 = s.statCat_67,
+                                  statCat_68 = s.statCat_68,
+                                  statCat_69 = s.statCat_69
+                              };
+
+
+                return View(players);
+            }
+
+            // if we get to here then the position was invalid so redirect
+            return RedirectToAction("Index");
+        }
+
+        // posted from ajax on Compare page
+        [HttpPost]
+        public IEnumerable<WeekStat> CompareWeeklyStats(List<Player> players)
+        {
+            string position = "";
+            List<int> p = new List<int>{};
+            foreach (var player in players)
+            {
+                position = player.position;
+                p.Add(player.playerId);
+            }
+
+
+            if (position == "QB")
+            {
+
+
+                var weekStat = from w in db.WeekStats
+                               where p.Contains(w.playerId)
+                                          && w.season == 2014
+                               select w;
+                               
+
+
+               return weekStat;
+            }
+
+
+
+
+            return null;
+        }
 
         public ActionResult Index()
         {

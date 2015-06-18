@@ -432,6 +432,8 @@
     <Content Include="Icon.png" />
     <Content Include="Images\background.gif" />
     <Content Include="Images\back_1.jpg" />
+    <Content Include="Images\collapse.png" />
+    <Content Include="Images\expand.png" />
     <Content Include="Images\field-665x385.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -466,6 +468,7 @@
     <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
     <Content Include="Scripts\ffc_js\api_queries.js" />
     <Content Include="Scripts\ffc_js\freezing_scroll_table.js" />
+    <Content Include="Scripts\ffc_js\player_compare.js" />
     <Content Include="Scripts\Highcharts\gfx\vml-radial-gradient.png" />
     <Content Include="Scripts\Highcharts\graphics\meteogram-symbols-30px.png" />
     <Content Include="Scripts\Highcharts\graphics\skies.jpg" />
@@ -479,6 +482,7 @@
     <Content Include="Scripts\Highcharts\js\highcharts-more.src.js" />
     <Content Include="Scripts\Highcharts\js\highcharts.js" />
     <Content Include="Scripts\Highcharts\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts\js\misc_snipets.js" />
     <Content Include="Scripts\Highcharts\js\modules\broken-axis.js" />
     <Content Include="Scripts\Highcharts\js\modules\broken-axis.src.js" />
     <Content Include="Scripts\Highcharts\js\modules\canvas-tools.js" />

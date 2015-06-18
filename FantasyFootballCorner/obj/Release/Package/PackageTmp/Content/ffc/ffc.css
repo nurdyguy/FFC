@@ -23,7 +23,7 @@
 
 .comparePlayerImage
 {
-    
+    width:100%;
 }
 
 .compareRemoveButton 
@@ -88,4 +88,36 @@ a.detailsLink
 .warningText
 {
     color: red;
+}
+
+div.playerDetailsBlock
+{
+    display:none;
+    border: 3px solid grey;
+    width:180px;
+    height:333px;
+
+}
+
+div.playerBackground table
+{
+    width:100%;
+}
+
+div.playerBackground td
+{
+    max-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:12px;
+}
+td.tdCollege
+{
+    width:50%;
+}
+
+div.comparePlayerImage img
+{
+    width:100%;
 }
