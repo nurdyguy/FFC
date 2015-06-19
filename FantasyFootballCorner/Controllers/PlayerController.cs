@@ -12,6 +12,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using FantasyFootballCorner.ViewModels;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace FantasyFootballCorner.Controllers
 {
@@ -823,35 +824,75 @@ namespace FantasyFootballCorner.Controllers
 
         // posted from ajax on Compare page
         [HttpPost]
-        public IEnumerable<WeekStat> CompareWeeklyStats(List<Player> players)
+        public JsonResult CompareWeeklyStats(List<Player> players)
         {
             string position = "";
-            List<int> p = new List<int>{};
+            List<int> pList = new List<int>{};
             foreach (var player in players)
             {
                 position = player.position;
-                p.Add(player.playerId);
+                pList.Add(player.playerId);
             }
 
-
-            if (position == "QB")
+            List<StatCategory> cats = new List<StatCategory>();
+            List<int> catNums = new List<int>();
+            switch (position)
             {
-
-
-                var weekStat = from w in db.WeekStats
-                               where p.Contains(w.playerId)
-                                          && w.season == 2014
-                               select w;
-                               
-
-
-               return weekStat;
+                case "QB":
+                    cats = (from sc in db.StatCategories
+                            where sc.isQBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
+               case "RB":
+                    cats = (from sc in db.StatCategories
+                            where sc.isRBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
+                case "WT":
+                    cats = (from sc in db.StatCategories
+                            where sc.isQBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
+                case "TE":
+                    cats = (from sc in db.StatCategories
+                            where sc.isQBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
+               case "K":
+                    cats = (from sc in db.StatCategories
+                            where sc.isQBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
+                case "DEF":
+                    cats = (from sc in db.StatCategories
+                            where sc.isQBStat == true
+                            select sc).ToList();
+                    catNums = (from s in cats
+                               select s.id).ToList();
+                    break;
             }
 
+            var stats = (from ps in db.PlayerStats
+                            where ps.player.position == position
+                                && pList.Contains(ps.playerId)
+                                && catNums.Contains(ps.statNum)
+                            group ps by ps.player.playerId into p
+                            select p);
+
+            var resp = new { cats, stats };
 
 
-
-            return null;
+            return Json(resp);
         }
 
         public ActionResult Index()

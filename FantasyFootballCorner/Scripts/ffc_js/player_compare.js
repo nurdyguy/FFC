@@ -25,34 +25,42 @@ $(function ()
 
 
 
-$(this).next('td').find('tbody').toggle();
+//$(this).next('td').find('tbody').toggle();
 
 
 function ExpandStatRow(ptr)
 {
-    var $row = $(this);
+    var $row = $(ptr);
     $row.removeClass("expandDown").addClass("collapseUp");
-
-    var $table = $row.next('td').find('tbody').show().find('table');
-
-    if (!($table.hasClass('alreadyLoaded') || $table.hasClass('loading')))
+    var $table = $row.next('td').find('div.divStatTableWeeklyData').find('table');
+    debugger;
+    if (!($('#tablePlayers').hasClass('ajaxLoaded') || $('#tablePlayers').hasClass('ajaxLoading')))
     {
-        GetWeekStatsData();
+        
+        GetWeekStatsData($table);
     }
-
+    else
+    {
+        if (!$table.hasClass('loaded'))
+            LoadWeekStats($table);
+        $table.closest('tbody').show();
+    }
 
 
 }
 
 
-function GetWeekStatsData()
+function GetWeekStatsData($table)
 {
+    var timer = new Date();
+    $('#tablePlayers').addClass('ajaxLoading');
+    $table.addClass('loading');
     var p = [];
     for (var pid in arrPlayers)
     {
         p.push({playerId: pid, position: arrPlayers[pid].position});
     }
-    debugger;
+    
     p = JSON.stringify(p);
 
     $.ajax(
@@ -64,24 +72,66 @@ function GetWeekStatsData()
         contentType: 'application/json; charset=utf-8',
         success: function (retObj)
         {
-            debugger;
+            console.log("GetWeekStatsData response: " + (new Date() - timer));
+            // parse the data
+            ParseWeekStatsData(retObj);
+            // set parent table to show ajax was done
+            $('#tablePlayers').addClass('ajaxLoaded')
+            // load and display clicked table
+            LoadWeekStats($table);
         },
         error: function (retObj)
         {
-            debugger;
-            var errorMessage = retObj.responseText.title;
-            alert(errorMessage);
+            console.log('Error in GetWeekStatsData AJAX request');
         },
         complete: function ()
         {
-            
-
+            $('#tablePlayers').removeClass('ajaxLoading')
         }
     });
 
 
 }
 
+function ParseWeekStatsData(retObj)
+{
+    // build arrCats for that position
+    for (var i in retObj.cats)
+    {
+        arrCats.push({'id': retObj.cats[i].id, 'name': retObj.cats[i].shortName});
+    }
+    // add all categories in arrPlayers for that position 
+    for(var pid in arrPlayers)
+    {
+        for(var w = 1; w <= 17; w++)
+        {
+            arrPlayers[pid].stats[w] = {};
+            for(var c in retObj.cats)
+                arrPlayers[pid].stats[w][retObj.cats[c]] = 0;
+        }
+    }
+    // parse stats
+    for (var i in retObj.stats)
+    {
+        if (retObj.stats[i].length > 0)
+        {
+            var pid = retObj.stats[i][0].playerId;
+            for (var j in retObj.stats[i])
+            {
+                if (typeof arrPlayers[pid].stats[retObj.stats[i][j].weekNum] == 'undefined')
+                    arrPlayers[pid].stats[retObj.stats[i][j].weekNum] = {};
+                arrPlayers[pid].stats[retObj.stats[i][j].weekNum][retObj.stats[i][j].statNum] = retObj.stats[i][j].statValue;
+            }
+        }
+    }
+}
+
+function LoadWeekStats($table)
+{
+    var statType;
+    debugger;
+
+}
 
 // for highcharts
 /*
