@@ -121,3 +121,68 @@ div.comparePlayerImage img
 {
     width:100%;
 }
+
+div.divStatTableWeeklyData
+{
+    height:400px;
+    width:100%;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    position:relative;
+}
+
+td.expandDown
+{
+    background-image:url("../../Images/expand.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position:right bottom;
+}
+
+td.collapseUp
+{
+    background-image:url("../../Images/collapse.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position:right bottom;
+}
+
+tr.statRow td.stat
+{
+    text-align:center;
+}
+
+img.imgGraphIcon
+{
+    position:absolute;
+    left:-100px;
+    top:75px;
+    height:40px;
+    width:40px;
+    z-index:999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

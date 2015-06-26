@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -52,7 +60,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -70,9 +77,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -195,122 +199,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Context\FFCContext.cs" />
     <Compile Include="Controllers\PlayerStatController.cs" />
-    <Compile Include="Controllers\WeekStatController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505071714153_InitialCreate.cs" />
-    <Compile Include="Migrations\201505071714153_InitialCreate.Designer.cs">
-      <DependentUpon>201505071714153_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071736055_InitialCreate1.cs" />
-    <Compile Include="Migrations\201505071736055_InitialCreate1.Designer.cs">
-      <DependentUpon>201505071736055_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071748285_player.cs" />
-    <Compile Include="Migrations\201505071748285_player.Designer.cs">
-      <DependentUpon>201505071748285_player.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071751089_player1.cs" />
-    <Compile Include="Migrations\201505071751089_player1.Designer.cs">
-      <DependentUpon>201505071751089_player1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071757332_player2.cs" />
-    <Compile Include="Migrations\201505071757332_player2.Designer.cs">
-      <DependentUpon>201505071757332_player2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071805051_player3.cs" />
-    <Compile Include="Migrations\201505071805051_player3.Designer.cs">
-      <DependentUpon>201505071805051_player3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505071958108_stat.cs" />
-    <Compile Include="Migrations\201505071958108_stat.Designer.cs">
-      <DependentUpon>201505071958108_stat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505072150221_player4.cs" />
-    <Compile Include="Migrations\201505072150221_player4.Designer.cs">
-      <DependentUpon>201505072150221_player4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505072222590_player5.cs" />
-    <Compile Include="Migrations\201505072222590_player5.Designer.cs">
-      <DependentUpon>201505072222590_player5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505101836094_player6.cs" />
-    <Compile Include="Migrations\201505101836094_player6.Designer.cs">
-      <DependentUpon>201505101836094_player6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505102242329_player7.cs" />
-    <Compile Include="Migrations\201505102242329_player7.Designer.cs">
-      <DependentUpon>201505102242329_player7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505282257269_player8.cs" />
-    <Compile Include="Migrations\201505282257269_player8.Designer.cs">
-      <DependentUpon>201505282257269_player8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505290008541_player9.cs" />
-    <Compile Include="Migrations\201505290008541_player9.Designer.cs">
-      <DependentUpon>201505290008541_player9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505290013127_player10.cs" />
-    <Compile Include="Migrations\201505290013127_player10.Designer.cs">
-      <DependentUpon>201505290013127_player10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505301913052_player11.cs" />
-    <Compile Include="Migrations\201505301913052_player11.Designer.cs">
-      <DependentUpon>201505301913052_player11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505311410075_player12.cs" />
-    <Compile Include="Migrations\201505311410075_player12.Designer.cs">
-      <DependentUpon>201505311410075_player12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505311413571_player13.cs" />
-    <Compile Include="Migrations\201505311413571_player13.Designer.cs">
-      <DependentUpon>201505311413571_player13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505311513562_player14.cs" />
-    <Compile Include="Migrations\201505311513562_player14.Designer.cs">
-      <DependentUpon>201505311513562_player14.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505312303575_player15.cs" />
-    <Compile Include="Migrations\201505312303575_player15.Designer.cs">
-      <DependentUpon>201505312303575_player15.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506012321147_player16.cs" />
-    <Compile Include="Migrations\201506012321147_player16.Designer.cs">
-      <DependentUpon>201506012321147_player16.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020241202_player17.cs" />
-    <Compile Include="Migrations\201506020241202_player17.Designer.cs">
-      <DependentUpon>201506020241202_player17.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020242005_player18.cs" />
-    <Compile Include="Migrations\201506020242005_player18.Designer.cs">
-      <DependentUpon>201506020242005_player18.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020255300_player19.cs" />
-    <Compile Include="Migrations\201506020255300_player19.Designer.cs">
-      <DependentUpon>201506020255300_player19.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020256317_player20.cs" />
-    <Compile Include="Migrations\201506020256317_player20.Designer.cs">
-      <DependentUpon>201506020256317_player20.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020258107_player21.cs" />
-    <Compile Include="Migrations\201506020258107_player21.Designer.cs">
-      <DependentUpon>201506020258107_player21.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020258484_player22.cs" />
-    <Compile Include="Migrations\201506020258484_player22.Designer.cs">
-      <DependentUpon>201506020258484_player22.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506101454420_player23.cs" />
-    <Compile Include="Migrations\201506101454420_player23.Designer.cs">
-      <DependentUpon>201506101454420_player23.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506111445123_player24.cs" />
-    <Compile Include="Migrations\201506111445123_player24.Designer.cs">
-      <DependentUpon>201506111445123_player24.cs</DependentUpon>
+    <Compile Include="Migrations\201506262150566_p.cs" />
+    <Compile Include="Migrations\201506262150566_p.Designer.cs">
+      <DependentUpon>201506262150566_p.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -319,7 +214,6 @@
     <Compile Include="Models\PlayerStat.cs" />
     <Compile Include="Models\StatCategory.cs" />
     <Compile Include="Models\Team.cs" />
-    <Compile Include="Models\WeekStat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PlayerDetailsViewModel.cs" />
     <Compile Include="ViewModels\PlayerIndexViewModel.cs" />
@@ -386,6 +280,7 @@
     <Content Include="Content\DataTables\swf\copy_csv_xls_pdf.swf" />
     <Content Include="Content\ffc\ffc.css" />
     <Content Include="Content\ffc\freezing_scroll_table.css" />
+    <Content Include="Content\images\drag_arrow-hi.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -435,10 +330,23 @@
     <Content Include="Images\collapse.png" />
     <Content Include="Images\expand.png" />
     <Content Include="Images\field-665x385.jpg" />
+    <Content Include="Images\graphIcon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\dataTables.responsive.scss" />
     <Content Include="Content\DataTables\css\dataTables.jqueryui.scss" />
+    <Content Include="Misc\snipets.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Code\MyHelpers.cshtml" />
+    <Content Include="Misc\seed data.xlsx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\fantasyfootballcorner.com - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\fantasyfootballcorner.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FFC.pubxml" />
@@ -529,13 +437,6 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\StickyTables\StickyTables.css" />
     <Content Include="Scripts\StickyTables\StickyTables.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
@@ -589,105 +490,24 @@
     <Content Include="Views\StatCategory\Edit.cshtml" />
     <Content Include="Views\StatCategory\Delete.cshtml" />
     <Content Include="Views\Player\UpdatePlayers.cshtml" />
-    <Content Include="Views\WeekStat\Index.cshtml" />
-    <Content Include="Views\WeekStat\Details.cshtml" />
-    <Content Include="Views\WeekStat\Create.cshtml" />
-    <Content Include="Views\WeekStat\Edit.cshtml" />
-    <Content Include="Views\WeekStat\Delete.cshtml" />
     <Content Include="Views\Player\Compare.cshtml" />
+    <None Include="Web.config_deploy.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web_orig.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Views\Graph\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505071714153_InitialCreate.resx">
-      <DependentUpon>201505071714153_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071736055_InitialCreate1.resx">
-      <DependentUpon>201505071736055_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071748285_player.resx">
-      <DependentUpon>201505071748285_player.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071751089_player1.resx">
-      <DependentUpon>201505071751089_player1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071757332_player2.resx">
-      <DependentUpon>201505071757332_player2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071805051_player3.resx">
-      <DependentUpon>201505071805051_player3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505071958108_stat.resx">
-      <DependentUpon>201505071958108_stat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505072150221_player4.resx">
-      <DependentUpon>201505072150221_player4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505072222590_player5.resx">
-      <DependentUpon>201505072222590_player5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505101836094_player6.resx">
-      <DependentUpon>201505101836094_player6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505102242329_player7.resx">
-      <DependentUpon>201505102242329_player7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505282257269_player8.resx">
-      <DependentUpon>201505282257269_player8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505290008541_player9.resx">
-      <DependentUpon>201505290008541_player9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505290013127_player10.resx">
-      <DependentUpon>201505290013127_player10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505301913052_player11.resx">
-      <DependentUpon>201505301913052_player11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505311410075_player12.resx">
-      <DependentUpon>201505311410075_player12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505311413571_player13.resx">
-      <DependentUpon>201505311413571_player13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505311513562_player14.resx">
-      <DependentUpon>201505311513562_player14.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505312303575_player15.resx">
-      <DependentUpon>201505312303575_player15.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506012321147_player16.resx">
-      <DependentUpon>201506012321147_player16.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020241202_player17.resx">
-      <DependentUpon>201506020241202_player17.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020242005_player18.resx">
-      <DependentUpon>201506020242005_player18.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020255300_player19.resx">
-      <DependentUpon>201506020255300_player19.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020256317_player20.resx">
-      <DependentUpon>201506020256317_player20.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020258107_player21.resx">
-      <DependentUpon>201506020258107_player21.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020258484_player22.resx">
-      <DependentUpon>201506020258484_player22.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506101454420_player23.resx">
-      <DependentUpon>201506101454420_player23.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506111445123_player24.resx">
-      <DependentUpon>201506111445123_player24.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506262150566_p.resx">
+      <DependentUpon>201506262150566_p.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -706,7 +526,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>20424</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49163/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -9,7 +9,7 @@ namespace FantasyFootballCorner.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(FantasyFootballCorner.Context.FFCContext context)

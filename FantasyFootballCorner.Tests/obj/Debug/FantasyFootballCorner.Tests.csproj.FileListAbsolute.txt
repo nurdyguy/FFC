@@ -164,3 +164,5 @@ C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\bin\Debug\zh-
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\obj\Debug\FantasyFootballCorner.Tests.csprojResolveAssemblyReference.cache
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\obj\Debug\FantasyFootballCorner.Tests.dll
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\obj\Debug\FantasyFootballCorner.Tests.pdb
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner.Tests\bin\Debug\EntityFramework.SqlServer.xml

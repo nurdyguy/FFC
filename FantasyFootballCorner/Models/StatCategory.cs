@@ -9,10 +9,10 @@ namespace FantasyFootballCorner.Models
 {
     public class StatCategory
     {
-        
 
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int statId { get; set; }
         
         public string abbr { get; set; }
         public string statName { get; set; }

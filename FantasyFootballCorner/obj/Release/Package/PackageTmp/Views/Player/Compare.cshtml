@@ -18,7 +18,10 @@
 <br />
 <script type="text/javascript">                    
     var arrPlayers = [];
+    var arrCats = [];
     var graphData = {};
+    var ajaxLoaded = false;
+    var ajaxRunning = false;
 </script>
 
 <div class="row" id="statChart"  style="display:none; width:600px; height:250px;"></div>
@@ -170,63 +173,20 @@
     </div>  
 
 </!--div-->
-<div class="row" style="display:none;">
-    @using (Html.BeginForm("Compare", "Player", FormMethod.Post)) 
-    {
-        @Html.AntiForgeryToken()
-         
-        <div style="max-width:200px; float:left;">
-            <div class="form-group ">
-                
-            
-                <select name="statType" class="form-group ">
-                    <option value="season" >2014 Season Stats</option>
-                    <option value="week1">2014 Week 1 Stats</option>
-                    <option value="week2">2014 Week 2 Stats</option>
-                    <option value="week3">2014 Week 3 Stats</option>
-                    <option value="week4">2014 Week 4 Stats</option>
-                    <option value="week5">2014 Week 5 Stats</option>
-                    <option value="week6">2014 Week 6 Stats</option>
-                    <option value="week7">2014 Week 7 Stats</option>
-                    <option value="week8">2014 Week 8 Stats</option>
-                    <option value="week9">2014 Week 9 Stats</option>
-                    <option value="week10">2014 Week 10 Stats</option>
-                    <option value="week11">2014 Week 11 Stats</option>
-                    <option value="week12">2014 Week 12 Stats</option>
-                    <option value="week13">2014 Week 13 Stats</option>
-                    <option value="week14">2014 Week 14 Stats</option>
-                    <option value="week15">2014 Week 15 Stats</option>
-                    <option value="week16">2014 Week 16 Stats</option>
-                    <option value="week17">2014 Week 17 Stats</option>
-                </select>
-                
-            </div>
-            <button type="submit" class="btn btn-primary">Update Stats</button>
-        </div>
-        <input name="player0" type="hidden" value="-1" />
-        <input name="player1" type="hidden" value="-1" />
-        <input name="player2" type="hidden" value="-1" />
-        <input name="player3" type="hidden" value="-1" />
-        <input name="player4" type="hidden" value="-1" />
-    }
 
-
-
-
-</div>
 
 <div class="row">
     <div id="divStatTable" class="col-lg-12 col-md-12 " style="display: inline-block;">
         <table class="table table-striped table-hover " id="tablePlayers" style="margin-bottom:0px;" >
             <colgroup>
-                <col width="50" /><col width="50" /><col width="180" />
+                <col width="100" /><col width="100" /><col width="180" />
                 <col width="180" /><col width="180" /><col width="180" /><col width="180" />
             </colgroup>
             <thead>
-                <tr class="yourface">
+                <tr >
                     <th></th><th></th>
                     <th>
-                        <div id="player_0" class="playerDetailsBlock isEmpty" >
+                        <div id="player_0" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
                             <div class="playerBackground">
@@ -256,7 +216,7 @@
                         </div>
                     </th>
                     <th>  
-                        <div id="player_1" class="playerDetailsBlock isEmpty" >
+                        <div id="player_1" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -287,7 +247,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_2" class="playerDetailsBlock isEmpty" >
+                        <div id="player_2" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -318,7 +278,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_3" class="playerDetailsBlock isEmpty" >
+                        <div id="player_3" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -349,7 +309,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_4" class="playerDetailsBlock isEmpty" >
+                        <div id="player_4" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage" style=""></div>    
                             <div class="playerBackground">
@@ -381,66 +341,104 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach (var item in Model)
+            @foreach(var item in Model.First().statsList)
             {
-                <tr class="success ui-dragable playerRow" >
-                    
-                </tr>
-   
-                <script type="text/javascript">
-                    if(!(@item.player.playerId in arrPlayers))
-                    {
-                        var dob = new Date('@item.playerBackground.dob');
-                        arrPlayers[@item.player.playerId] = {
-                            name: '@item.player.playerName',
-                            position: '@item.player.position',
-                            team: '@item.player.teamAbbre',
-                            height: '@item.playerBackground.height',
-                            weight: '@item.playerBackground.weight',
-                            dob: (dob.getMonth() + 1) + '/' + dob.getDate() + '/' + dob.getFullYear(),
-                            college: '@item.playerBackground.college',
-                            pic: '@item.playerBackground.imageUrl',
-                            years: '@item.playerBackground.years',
-                            stats: {}
-                        };
-
-                        //arrPlayers[@item.player.playerId].stats{statCat: item.
-
-                        var $block = $('div.playerDetailsBlock.isEmpty').eq(0);
-                        $block.removeClass('isEmpty');
-                        $block.find('div.comparePlayerName').text(arrPlayers[@item.player.playerId].name);
-                        $block.find('div.comparePlayerImage').html('<img src="' + arrPlayers[@item.player.playerId].pic + '" />');
-                        $block.find('td.tdCollege').text(arrPlayers[@item.player.playerId].college);
-                        $block.find('td.tdYears').text(arrPlayers[@item.player.playerId].years);
-                        $block.find('td.tdDob').text(arrPlayers[@item.player.playerId].dob);
-                        $block.find('td.tdHeight').text(parseInt(arrPlayers[@item.player.playerId].height/12) + ' ft  ' + arrPlayers[@item.player.playerId].height%12 + ' in');
-                        $block.find('td.tdWeight').text(arrPlayers[@item.player.playerId].weight + ' lbs');
-                        $block.css('display','inline-block');
-                    };               
-
-                     
-                    if(typeof graphData['@item.player.playerName'] == 'undefined')
-                        graphData['@item.player.playerName'] = [];
-
-                    graphData['@item.player.playerName'].push([@item.weekStat.weekNum, @item.statCat_5]);
-                   
-                    
-
-                </script>
-                
+                if(item.statId > 1)
+                {
+                    <tr class="success statRow" statId ="@item.statId" style="height:38px;">
+                        <td class="expandDown" onclick="ExpandStatRow(this)">@item.statCat.shortName</td>
+                        <td colspan="6" style="padding:0px;">
+                            <table class="table table-striped table-hover " style="width:100%; margin-top:-1px;margin-bottom:0px;">
+                                <colgroup>
+                                    <col width="106" /><col width="182" /><col width="182" />
+                                    <col width="182" /><col width="182" /><col width="182" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="success " >
+                                        <td>Season Total:</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody style="display:none; height:400px; overflow-y:scroll;">
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="divStatTableWeeklyData ">
+                                                <img class="imgGraphIcon" src ="../../Images/graphIcon.png"  /> 
+                                                <table class="table table-striped table-hover " style="width:100%; margin-top:-1px;margin-bottom:0px;">
+                                                    <colgroup>
+                                                        <col width="106" /><col width="182" /><col width="182" />
+                                                        <col width="182" /><col width="182" /><col width="180" />
+                                                    </colgroup>
+                                                    <thead></thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                }
             }
-            
-        
-            
+                
             </tbody>  
         </table>
         
         
         
     </div>
-    
-    
+
 </div>
+
+
+<script type="text/javascript">
+    var dob;
+    @foreach (var item in Model)
+    {
+                
+        <text>
+        dob = new Date('@item.playerBackground.dob');
+        arrPlayers.push(
+        {
+            
+                playerId: @item.player.playerId,
+                name: '@item.player.playerName',
+                position: '@item.player.position',
+                team: '@item.player.teamAbbre',
+                height: '@item.playerBackground.height',
+                weight: '@item.playerBackground.weight',
+                dob: (dob.getMonth() + 1) + '/' + dob.getDate() + '/' + dob.getFullYear(),
+                college: '@item.playerBackground.college',
+                pic: '@item.playerBackground.imageUrl',
+                years: '@item.playerBackground.years',
+                stats: {}
+            
+        });
+        var i = arrPlayers.length - 1;
+        arrPlayers[i].stats = {totals: {}};
+
+        @foreach(var s in item.statsList)
+        {
+            @:arrPlayers[i].stats['totals'][@s.statId] = @s.statAmt;
+                                
+        }
+            
+
+        </text>          
+    }                   
+
+</script>
+                
+
+            
+        
+            
+            
 
 
 

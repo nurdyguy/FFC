@@ -2,7 +2,50 @@
 
 
 
+<div class="row" style="display:none;">
+    @using (Html.BeginForm("Compare", "Player", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+         
+    <div style="max-width:200px; float:left;">
+        <div class="form-group ">
+                
+            
+            <select name="statType" class="form-group ">
+                <option value="season" >2014 Season Stats</option>
+                <option value="week1">2014 Week 1 Stats</option>
+                <option value="week2">2014 Week 2 Stats</option>
+                <option value="week3">2014 Week 3 Stats</option>
+                <option value="week4">2014 Week 4 Stats</option>
+                <option value="week5">2014 Week 5 Stats</option>
+                <option value="week6">2014 Week 6 Stats</option>
+                <option value="week7">2014 Week 7 Stats</option>
+                <option value="week8">2014 Week 8 Stats</option>
+                <option value="week9">2014 Week 9 Stats</option>
+                <option value="week10">2014 Week 10 Stats</option>
+                <option value="week11">2014 Week 11 Stats</option>
+                <option value="week12">2014 Week 12 Stats</option>
+                <option value="week13">2014 Week 13 Stats</option>
+                <option value="week14">2014 Week 14 Stats</option>
+                <option value="week15">2014 Week 15 Stats</option>
+                <option value="week16">2014 Week 16 Stats</option>
+                <option value="week17">2014 Week 17 Stats</option>
+            </select>
+                
+        </div>
+        <button type="submit" class="btn btn-primary">Update Stats</button>
+    </div>
+    <input name="player0" type="hidden" value="-1" />
+    <input name="player1" type="hidden" value="-1" />
+    <input name="player2" type="hidden" value="-1" />
+    <input name="player3" type="hidden" value="-1" />
+    <input name="player4" type="hidden" value="-1" />
+    }
 
+
+
+
+</div>
 
 var html = 
 '<td >

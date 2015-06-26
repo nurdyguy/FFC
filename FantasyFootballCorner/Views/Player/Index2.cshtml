@@ -1,0 +1,457 @@
+﻿@model IEnumerable<FantasyFootballCorner.ViewModels.PlayerIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Player Index</h1>
+<br />
+<div id="idPlayerPreview"></div>
+<br />
+<script type="text/javascript">                    
+    var arrPlayers = [];
+</script>
+<div class="row">
+
+@using (Html.BeginForm("Index", "Player", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div style="max-width:200px; float:left; display:inline-block;">
+        <div class="form-group ">
+            <label class="control-label " for="inputSmall">Player Name</label>
+            @Html.TextBox("Name", "", new {@class="form-control "})
+        </div>
+        <div class=" form-group ">
+            <label class="control-label ">Position</label>
+            <div class="">
+                <select class="dropdown form-control" name="position">
+                    <option value="ALL">Any Position</option>
+                    <option value="QB">Quarter Backs</option>
+                    <option value="RB">Running Backs</option>
+                    <option value="WR">Wide Receivers</option>
+                    <option value="TE">Tight Ends</option>
+                    <option value="K">Kickers</option>
+                    <option value="DEF">Defense/Special Teams</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+    
+}
+@using (Html.BeginForm("Compare", "Player", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    <div  id="divComparePlayers" style=" float:right; display:inline-block;">
+        <div style="width:100%; text-align:center">
+            <button id="compareSubmit" type="submit" class="btn btn-primary btn-xs">Compare Players (select up to 5)</button>           
+        </div>
+        <div id="playerCompare_0" class="playerCompareBlock" PID=-1>
+            <div class="comparePlayerName comparePlayerText"></div>
+            <div style="width:100%;" class="comparePlayerImage">
+                <div class="divDropHere">
+                    Drop Player Here
+                </div>
+            </div>
+            <a  class="btn btn-primary btn-xs compareRemoveButton" style="display:none; margin-top:2px;" >Remove</a>
+            <input name="player0" type="hidden" value="-1" />
+        </div>  
+        <div id="playerCompare_1" class="playerCompareBlock" PID=-1>
+            <div class="comparePlayerName comparePlayerText"></div>
+            <div style="width:100%;" class="comparePlayerImage">
+                <div class="divDropHere">
+                    Drop Player Here
+                </div>
+            </div>
+            <a  class="btn btn-primary btn-xs compareRemoveButton" style="display:none; margin-top:2px;" >Remove</a>
+            <input name="player1" type="hidden" value="-1" />
+        </div>
+        <div id="playerCompare_2" class="playerCompareBlock" PID=-1>
+            <div class="comparePlayerName comparePlayerText"></div>
+            <div style="width:100%;" class="comparePlayerImage">
+                <div class="divDropHere">
+                    Drop Player Here
+                </div>
+            </div>
+            <a  class="btn btn-primary btn-xs compareRemoveButton" style="display:none; margin-top:2px;" >Remove</a>
+            <input name="player2" type="hidden" value="-1" />
+        </div>
+        <div id="playerCompare_3" class="playerCompareBlock" PID=-1>
+            <div class="comparePlayerName comparePlayerText"></div>
+            <div style="width:100%;" class="comparePlayerImage">
+                <div class="divDropHere">
+                    Drop Player Here
+                </div>
+            </div>
+            <a  class="btn btn-primary btn-xs compareRemoveButton" style="display:none; margin-top:2px;">Remove</a>
+            <input name="player3" type="hidden" value="-1" />
+        </div>
+        <div id="playerCompare_4" class="playerCompareBlock" PID=-1>
+            <div class="comparePlayerName comparePlayerText"></div>
+            <div style="width:100%;" class="comparePlayerImage">
+                <div class="divDropHere">
+                    Drop Player Here
+                </div>
+            </div>
+            <a  class="btn btn-primary btn-xs compareRemoveButton" style="display:none; margin-top:2px;" onclick="">Remove</a>
+            <input name="player4" type="hidden" value="-1" />
+        </div>
+    
+    </div>
+}
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 " style="display: inline-block; overflow-x:scroll; padding:0px;">
+        <table class="table table-striped table-hover " id="tablePlayers" style="margin-bottom:0px;" >
+            <thead>
+                <tr>
+                    <th ></th>
+                    <th >
+                        @Html.DisplayNameFor(model => model.player.playerName)
+                    </th>
+                    <th >
+                        @Html.DisplayNameFor(model => model.player.position)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.team.teamName)
+                    </th>               
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_5)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_6)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_14)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_15)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_21)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_22)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_35)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_36)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_37)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_38)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_39)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_46)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_47)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.statCat_54)
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="success ui-dragable playerRow" pid=@item.player.playerId style="display: none; ">
+                    <td >
+                        <img class="dragIcon" src="..\..\images\drag_arrow-hi.png" height="25" width="25" />
+                    </td>
+                    <td >
+                        @Html.ActionLink(item.player.playerName, "Details", new { id = item.player.playerId }, new { @class = "detailsLink" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.player.position)
+                    </td>
+                    <td>
+                        @(item.team.geoName + " " + item.team.teamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_14)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_15)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_21)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_22)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_35)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_36)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_37)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_38)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_39)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_46)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_47)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.statCat_54)
+                    </td>
+                    
+                </tr>
+   
+                <script type="text/javascript">                    
+                    arrPlayers[@item.player.playerId] = {
+                        name: '@item.player.playerName',
+                        position: '@item.player.position', team: '@item.player.teamAbbre',
+                        height: '@item.playerBackground.height', weight: '@item.playerBackground.weight',
+                        dob: '@item.playerBackground.dob', college: '@item.playerBackground.college',
+                        pic: '@item.playerBackground.imageUrl', years: '@item.playerBackground.years',
+                        stats: @item.statsList
+
+
+                        
+                    };                                
+                </script>
+            }
+            
+        
+            
+            </tbody>  
+        </table>
+        
+        
+        
+    </div>
+    <ul class="pagination pagination-sm" id="pager" style="display:none;">
+        </ul>
+    <!--div id="divPlayerPreview" class="col-lg-4  col-md-4" style="display: inline-block; ">
+        <div>Preview:</div>
+        <div class="playerPreview">
+            <div id="previewName"></div>
+            <div style="width:100%;">
+                <img id="previewImage" width="200" height="200" />
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </!--div-->
+</div>
+
+<div id="divPlayerDragImage"><img id="imgPlayerDrag" /></div>
+
+
+
+
+
+
+
+<script>
+    
+    $(function () {
+        var tableLen = $('table').find('tr.success').length;
+        var html = '<li class="disabled"><a onclick="page(next)">«</a></li>';
+        html += '<li class="active"><a onclick="page(this)">1</a></li>';
+        for (var i = 2; i < parseInt(tableLen / 10) + 1; i++)
+            html += '<li ><a  onclick="page(this)">' + i + '</a></li>';
+        html += '<li><a onclick="page(prev)">»</a></li>';
+
+        $('#pager').html(html);
+
+        for (var i = 0; i < 10; i++)
+            $('table').find('tr.success').eq(i).show();
+
+
+        
+    });
+
+    /*
+    $(function () {
+        var args = {};
+        InitFreezingScrollTable('tablePlayers', args);
+
+    });
+    */
+
+    function page(ptr)
+    {
+        if (ptr == 'next')
+        {
+            return;
+        }
+        if (ptr == 'prev')
+        {
+            return;
+        }
+
+
+        $('#pager').find('li').removeClass('active');
+        $(ptr).addClass('active');
+        var num = parseInt($(ptr).text());
+        var $rows = $('table').find('tr.success');
+        $rows.hide(); 
+        for (var i = (num - 1) * 10; i < num * 10; i++)
+            $rows.eq(i).show();
+    }
+
+    /*
+    $('tr.playerRow').on('click', function()
+    {
+        var pid = $(this).attr('pid');
+        $('#previewImage').prop('src', arrPlayers[pid].pic);
+        $('#previewName').text(arrPlayers[pid].name);
+
+    });
+    */
+    
+    var dragging = false;
+    var dragPID = -1;
+    var $dragImage = $('#imgPlayerDrag');
+    $('img.dragIcon').on('mousedown', function (e)
+    {           
+        e.preventDefault();             
+        dragPID = $(this).closest('tr').attr('pid');
+        var firstEmpty = -1;
+        for (var i = 0; i < 5 && firstEmpty < 0; i++)
+        {
+            if (!$('#playerCompare_' + i).hasClass('hasPlayer'))
+                firstEmpty = i;
+        }
+        if (firstEmpty >= 0)
+        {
+            dragging = true;
+            $dragImage.closest('div').show();
+            $dragImage.prop('src', arrPlayers[dragPID].pic);
+            $dragImage.css('top', e.pageY-2).css('left', e.pageX-32);
+            
+        }
+    });
+
+    $(body).on('mouseup', '#divComparePlayers', function (e)
+    {
+        // exit if invalid drag
+        if (!dragging || dragPID < 0)
+            return;
+        
+
+        
+        
+        
+        var $block = $(e.target).closest('div.playerCompareBlock');
+
+        
+        for(var i = 0; i < 5; i++)
+        {      
+            var pid = $('div.playerCompareBlock').eq(i).attr('PID')
+            if(pid > 0 && arrPlayers[dragPID].position != arrPlayers[pid].position)
+            {       
+                alert('You cannot compare players from different positions.');
+                dragPID = -1;
+                dragging = false;
+
+                $dragImage.closest('div').hide();
+                return;
+            }
+
+            if(pid == dragPID)
+            {
+                alert('Player already on list.');
+                dragPID = -1;
+                dragging = false;
+
+                $dragImage.closest('div').hide();
+                return;
+            }
+        }
+       
+        var img = '<img src="' + arrPlayers[dragPID].pic + '" class="comparePlayerImage" width="150" height="150"/>';
+        $block.attr('PID', dragPID);
+        $block.find('div.comparePlayerName').text(arrPlayers[dragPID].name + ' - ' + arrPlayers[dragPID].position);
+        $block.find('div.comparePlayerImage').html(img);
+        $block.addClass('hasPlayer');
+        $block.find('a.compareRemoveButton').show();
+        $block.find('input').val(dragPID);
+
+        dragPID = -1;
+        dragging = false;
+
+        $dragImage.closest('div').hide();
+    });
+
+    $(body).on('mousemove', function(e)
+    {
+        if(!dragging)
+            return;
+        $dragImage.css('top', e.pageY-2).css('left', e.pageX-32);
+
+    });
+
+    $('a.compareRemoveButton').on('click', function(e)
+    {
+        var $block = $(e.target).closest('div.playerCompareBlock');
+        var html = '<div class="divDropHere">Drop Player Here</div>';
+
+        $block.attr('PID', -1);
+        $block.find('div.comparePlayerName').text('');
+        $block.find('div.comparePlayerImage').html(html);
+        $block.removeClass('hasPlayer');
+        $block.find('a.compareRemoveButton').hide();
+        $block.find('input').val(-1);
+
+        
+
+    });
+
+
+    
+
+    /*
+    var table = $('#tablePlayers').DataTable( {
+        "sScrollX" : "100%", //Scroll
+        "bAutoWidth" : false,
+        "bScrollCollapse" : true,
+        "bPaginate" : false,
+        "bSort" : false,
+        "bFilter": false,
+        "sInfo" : "",
+        "sInfoEmpty" : ""
+
+    });
+    new $.fn.dataTable.FixedColumns(table, {
+        "iLeftColumns" : 4
+    });
+    */
+
+    
+</script>
+

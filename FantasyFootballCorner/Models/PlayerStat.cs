@@ -10,22 +10,22 @@ namespace FantasyFootballCorner.Models
     public class PlayerStat
     {
         [Key]
-        public int id { get; set; }
-
-        public int statNum {get; set;}
-
-        public double statValue { get; set; }
+        public int Id { get; set; }
 
         
-        
+        [ForeignKey("statId")]
+        public virtual StatCategory statCat { get; set; }
+        public int statId { get; set; }
+         
+      
         [ForeignKey("playerId")]
         public virtual Player player { get; set; }
         public int playerId { get; set; }
 
         public int season { get; set; }
         public int weekNum { get; set; }
+        public double statAmt { get; set; }
 
-        
 
 
         /*

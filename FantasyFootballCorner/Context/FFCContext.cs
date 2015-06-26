@@ -17,7 +17,7 @@ namespace FantasyFootballCorner.Context
         public DbSet<PlayerStat> PlayerStats { get; set; }
         public DbSet<StatCategory> StatCategories { get; set; }
         public DbSet<Team> Teams { get; set; }
-        public DbSet<WeekStat> WeekStats { get; set; }
+
 
 
         //public DbSet<Course> Courses { get; set; }

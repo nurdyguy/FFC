@@ -8,7 +8,8 @@
 <br />
 <div id="idPlayerPreview"></div>
 <br />
-<script type="text/javascript">                    
+<script type="text/javascript">     
+    var arrCats = [];
     var arrPlayers = [];
 </script>
 <div class="row">
@@ -117,52 +118,17 @@
                     <th>
                         @Html.DisplayNameFor(model => model.team.teamName)
                     </th>               
+                
+                @foreach (var pivm in Model.First().statsList)
+                {
+                    <script type="text/javascript"> 
+                        arrCats.push({statID: @pivm.statId, statName: '@pivm.statCat.shortName'});
+                    </script>
                     <th>
-                        @Html.DisplayNameFor(model => model.statCat_1)
+                        @pivm.statCat.shortName
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_5)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_6)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_14)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_15)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_21)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_22)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_35)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_36)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_37)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_38)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_39)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_46)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_47)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.statCat_54)
-                    </th>
-                    
+                }
+
                 </tr>
             </thead>
             <tbody>
@@ -170,7 +136,7 @@
             {
                 <tr class="success ui-dragable playerRow" pid=@item.player.playerId style="display: none; ">
                     <td >
-                        <img class="dragIcon" src="..\..\Content\images\drag_arrow-hi.png" height="25" width="25" />
+                        <img class="dragIcon" src="..\..\images\drag_arrow-hi.png" height="25" width="25" />
                     </td>
                     <td >
                         @Html.ActionLink(item.player.playerName, "Details", new { id = item.player.playerId }, new { @class = "detailsLink" })
@@ -180,67 +146,37 @@
                     </td>
                     <td>
                         @(item.team.geoName + " " + item.team.teamName)
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_1)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_5)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_6)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_14)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_15)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_21)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_22)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_35)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_36)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_37)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_38)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_39)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_46)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_47)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.statCat_54)
                     </td>
                     
-                </tr>
+                    
+                    
    
-                <script type="text/javascript">                    
-                    arrPlayers[@item.player.playerId] = {
-                        name: '@item.player.playerName',
-                        position: '@item.player.position', team: '@item.player.teamAbbre',
-                        height: '@item.playerBackground.height', weight: '@item.playerBackground.weight',
-                        dob: '@item.playerBackground.dob', college: '@item.playerBackground.college',
-                        pic: '@item.playerBackground.imageUrl', years: '@item.playerBackground.years',
-                        stats: {
+                    <script type="text/javascript">                    
+                        arrPlayers[@item.player.playerId] = {
+                            name: '@item.player.playerName',
+                            position: '@item.player.position', 
+                            team: '@item.player.teamAbbre',
+                            pic: '@item.playerBackground.imageUrl', 
+                            stats: {}
+                        };           
+                    </script>
+                        @foreach (var stat in item.statsList)
+                        {
 
-
+                            <script type="text/javascript">  
+                                arrPlayers[@item.player.playerId].stats[@stat.statId] = @stat.statAmt;
+                            </script>
+                            <td>
+                                @stat.statAmt
+                            </td>
+                            
                         }
-                    };                                
-                </script>
+                    
+                        
+                            
+                           
+                        
+                </tr>
             }
             
         
@@ -375,6 +311,16 @@
             if(pid > 0 && arrPlayers[dragPID].position != arrPlayers[pid].position)
             {       
                 alert('You cannot compare players from different positions.');
+                dragPID = -1;
+                dragging = false;
+
+                $dragImage.closest('div').hide();
+                return;
+            }
+
+            if(pid == dragPID)
+            {
+                alert('Player already on list.');
                 dragPID = -1;
                 dragging = false;
 

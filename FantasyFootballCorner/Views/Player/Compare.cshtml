@@ -20,6 +20,8 @@
     var arrPlayers = [];
     var arrCats = [];
     var graphData = {};
+    var ajaxLoaded = false;
+    var ajaxRunning = false;
 </script>
 
 <div class="row" id="statChart"  style="display:none; width:600px; height:250px;"></div>
@@ -181,10 +183,10 @@
                 <col width="180" /><col width="180" /><col width="180" /><col width="180" />
             </colgroup>
             <thead>
-                <tr class="yourface">
+                <tr >
                     <th></th><th></th>
                     <th>
-                        <div id="player_0" class="playerDetailsBlock isEmpty" >
+                        <div id="player_0" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
                             <div class="playerBackground">
@@ -214,7 +216,7 @@
                         </div>
                     </th>
                     <th>  
-                        <div id="player_1" class="playerDetailsBlock isEmpty" >
+                        <div id="player_1" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -245,7 +247,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_2" class="playerDetailsBlock isEmpty" >
+                        <div id="player_2" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -276,7 +278,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_3" class="playerDetailsBlock isEmpty" >
+                        <div id="player_3" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage"></div>
         
@@ -307,7 +309,7 @@
                         </div>  
                     </th>
                     <th> 
-                        <div id="player_4" class="playerDetailsBlock isEmpty" >
+                        <div id="player_4" class="playerDetailsBlock" >
                             <div class="comparePlayerName comparePlayerText"></div>
                             <div class="comparePlayerImage" style=""></div>    
                             <div class="playerBackground">
@@ -339,228 +341,51 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="success " >
-                    <td class="expandDown" onclick="ExpandStatRow(this)">@Html.DisplayNameFor(model => model.statCat_1)</td>
-                    <td colspan="6" style="padding:0px;">
-                        <table class="table table-striped table-hover " style="width:100%; margin-top:-1px;margin-bottom:0px;">
-                            <colgroup>
-                                <col width="106" /><col width="182" /><col width="182" />
-                                <col width="182" /><col width="182" /><col width="182" />
-                            </colgroup>
-                            <thead>
-                                <tr class="success " >
-                                    <td>Season Total:</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody style="display:none; height:400px; overflow-y:scroll;">
-                                <tr>
-                                    <td colspan="6">
-                                        <div class="divStatTableWeeklyData ">
-                                            <table class="table table-striped table-hover " style="width:100%; height:100%; margin-top:-1px;margin-bottom:0px;">
-                                                <thead></thead>
-                                                <tbody></tbody>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_2)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_3)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_4)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_5)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_6)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_7)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_8)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_9)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_10)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_11)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_12)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_13)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_14)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_15)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_16)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_17)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_18)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_19)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_30)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_31)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="success " >
-                    <td>@Html.DisplayNameFor(model => model.statCat_32)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            @foreach(var item in Model.First().statsList)
+            {
+                if(item.statId > 1)
+                {
+                    <tr class="success statRow" statId ="@item.statId" style="height:38px;">
+                        <td class="expandDown" onclick="ExpandStatRow(this)">@item.statCat.shortName</td>
+                        <td colspan="6" style="padding:0px;">
+                            <table class="table table-striped table-hover " style="width:100%; margin-top:-1px;margin-bottom:0px;">
+                                <colgroup>
+                                    <col width="106" /><col width="182" /><col width="182" />
+                                    <col width="182" /><col width="182" /><col width="182" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="success " >
+                                        <td>Season Total:</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody style="display:none; height:400px; overflow-y:scroll;">
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="divStatTableWeeklyData ">
+                                                <img class="imgGraphIcon" src ="../../Images/graphIcon.png"  /> 
+                                                <table class="table table-striped table-hover " style="width:100%; margin-top:-1px;margin-bottom:0px;">
+                                                    <colgroup>
+                                                        <col width="106" /><col width="182" /><col width="182" />
+                                                        <col width="182" /><col width="182" /><col width="180" />
+                                                    </colgroup>
+                                                    <thead></thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                }
+            }
+                
             </tbody>  
         </table>
         
@@ -570,15 +395,18 @@
 
 </div>
 
-@foreach (var item in Model)
-{
+
+<script type="text/javascript">
+    var dob;
+    @foreach (var item in Model)
+    {
                 
-   
-    <script type="text/javascript">
-        if(!(@item.player.playerId in arrPlayers))
+        <text>
+        dob = new Date('@item.playerBackground.dob');
+        arrPlayers.push(
         {
-            var dob = new Date('@item.playerBackground.dob');
-            arrPlayers[@item.player.playerId] = {
+            
+                playerId: @item.player.playerId,
                 name: '@item.player.playerName',
                 position: '@item.player.position',
                 team: '@item.player.teamAbbre',
@@ -589,37 +417,24 @@
                 pic: '@item.playerBackground.imageUrl',
                 years: '@item.playerBackground.years',
                 stats: {}
-            };
+            
+        });
+        var i = arrPlayers.length - 1;
+        arrPlayers[i].stats = {totals: {}};
 
-            arrPlayers[@item.player.playerId].stats = {totals: 
-                    {1: @item.statCat_1, 2: @item.statCat_2, 3: @item.statCat_3, 4: @item.statCat_4, 5: @item.statCat_5, 
-                        6: @item.statCat_6, 7: @item.statCat_7, 8: @item.statCat_8, 9: @item.statCat_9, 10: @item.statCat_10,
-                        11: @item.statCat_11, 12: @item.statCat_12, 13: @item.statCat_13, 14: @item.statCat_14, 15: @item.statCat_15,
-                        16: @item.statCat_16, 17: @item.statCat_17, 18: @item.statCat_18, 19: @item.statCat_19, 30: @item.statCat_30,
-                        31: @item.statCat_31, 32: @item.statCat_32}};
+        @foreach(var s in item.statsList)
+        {
+            @:arrPlayers[i].stats['totals'][@s.statId] = @s.statAmt;
+                                
+        }
+            
 
+        </text>          
+    }                   
 
-
-            var $block = $('div.playerDetailsBlock.isEmpty').eq(0);
-            $block.removeClass('isEmpty');
-            $block.find('div.comparePlayerName').text(arrPlayers[@item.player.playerId].name);
-            $block.find('div.comparePlayerImage').html('<img src="' + arrPlayers[@item.player.playerId].pic + '" />');
-            $block.find('td.tdCollege').text(arrPlayers[@item.player.playerId].college);
-            $block.find('td.tdYears').text(arrPlayers[@item.player.playerId].years);
-            $block.find('td.tdDob').text(arrPlayers[@item.player.playerId].dob);
-            $block.find('td.tdHeight').text(parseInt(arrPlayers[@item.player.playerId].height/12) + ' ft  ' + arrPlayers[@item.player.playerId].height%12 + ' in');
-            $block.find('td.tdWeight').text(arrPlayers[@item.player.playerId].weight + ' lbs');
-            $block.css('display','inline-block');
-        };               
-
-                     
-        
-                   
-                    
-
-    </script>
+</script>
                 
-}
+
             
         
             

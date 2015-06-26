@@ -25,5 +25,6 @@ namespace FantasyFootballCorner.Models
         public string imageUrl { get; set; }
 
         public int years { get; set; }
+
     }
 }

@@ -10,14 +10,35 @@ namespace FantasyFootballCorner.ViewModels
     public class PlayerIndexViewModel
     {
         
-
+        
         public Player player { get; set; }
         public PlayerBackground playerBackground { get; set; }
         public Team team { get; set; }
-        public WeekStat weekStat { get; set; }
+  
+        public List<PlayerStat> statsList { get; set; }
+        public List<StatCategory> fullStatsList { get; set; }
 
-        /*
+        public PlayerIndexViewModel(Player p, PlayerBackground pb, Team t, List<PlayerStat> sList, List<StatCategory> fsl)
+        {
+            
+            player = p;
+            playerBackground = pb;
+            team = t;
+            statsList = sList;
+            //fullStatsList = fsl;
+
+            for (int i = 0; i < fsl.Count; i++)
+            {
+                statsList.Add(new PlayerStat());
+                statsList.Last().statCat = fsl[i];
+                statsList.Last().statId = fsl[i].statId;
+                statsList.Last().statAmt = 0;
+            }
+        }
+
         public PlayerIndexViewModel() { }
+
+        /* 
         public PlayerIndexViewModel(Player p, PlayerBackground pb, Team t, WeekStat w)
         {
             player = p;
