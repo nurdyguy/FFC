@@ -198,6 +198,5 @@ C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFo
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.pdb
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\EntityFramework.SqlServer.dll
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\bin\EntityFramework.SqlServer.xml
-C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.csprojResolveAssemblyReference.cache
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.Migrations.p.resources
 C:\Users\culbetod\Documents\GitHub\FFC\FantasyFootballCorner\obj\Debug\FantasyFootballCorner.csproj.GenerateResource.Cache

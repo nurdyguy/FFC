@@ -4,13 +4,18 @@
     ViewBag.Title = "Index";
 }
 
+<script type="text/javascript" src="@Url.Content("/Scripts/ffc_js/player_index.js")"></script>
+
 <h1>Player Index</h1>
 <br />
-<div id="idPlayerPreview"></div>
+
 <br />
-<script type="text/javascript">     
+<script type="text/javascript">   
+    var timer = new Date();
     var arrCats = [];
     var arrPlayers = [];
+    var currPage = 1;
+    var numRows = 10;
 </script>
 <div class="row">
 
@@ -103,20 +108,29 @@
 }
 </div>
 
+@if (Model.Count() == 0)
+{
+    <h2>No Players Match this criteria.  Please try again.</h2>
+}
+else
+{
 <div class="row">
     <div class="col-lg-12 col-md-12 " style="display: inline-block; overflow-x:scroll; padding:0px;">
         <table class="table table-striped table-hover " id="tablePlayers" style="margin-bottom:0px;" >
             <thead>
                 <tr>
                     <th ></th>
-                    <th >
+                    <th onclick="Sort(this)" sortCat="name">
                         @Html.DisplayNameFor(model => model.player.playerName)
+                        <span  ></span>
                     </th>
-                    <th >
+                    <th onclick="Sort(this)" sortCat="position">
                         @Html.DisplayNameFor(model => model.player.position)
+                        <span  ></span>
                     </th>
-                    <th>
+                    <th onclick="Sort(this)" sortCat="team">
                         @Html.DisplayNameFor(model => model.team.teamName)
+                        <span  ></span>
                     </th>               
                 
                 @foreach (var pivm in Model.First().statsList)
@@ -124,17 +138,19 @@
                     <script type="text/javascript"> 
                         arrCats.push({statID: @pivm.statId, statName: '@pivm.statCat.shortName'});
                     </script>
-                    <th>
+                    <th onclick="Sort(this)" sortCat=@pivm.statId>
                         @pivm.statCat.shortName
+                        <span  ></span>
                     </th>
                 }
 
                 </tr>
             </thead>
             <tbody>
-            @foreach (var item in Model)
+            @for(var i = 0; i < Math.Min(10,Model.Count()); i++)
             {
-                <tr class="success ui-dragable playerRow" pid=@item.player.playerId style="display: none; ">
+                var item = Model.ElementAt(i);
+                <tr class="success ui-dragable playerRow" pid=@item.player.playerId pIndex=i>
                     <td >
                         <img class="dragIcon" src="..\..\images\drag_arrow-hi.png" height="25" width="25" />
                     </td>
@@ -147,245 +163,65 @@
                     <td>
                         @(item.team.geoName + " " + item.team.teamName)
                     </td>
-                    
-                    
-                    
-   
-                    <script type="text/javascript">                    
-                        arrPlayers[@item.player.playerId] = {
+                    <script type="text/javascript">
+                        arrPlayers.push({
+                            playerId: @item.player.playerId,
                             name: '@item.player.playerName',
                             position: '@item.player.position', 
-                            team: '@item.player.teamAbbre',
+                            team: '@item.team.geoName' + ' ' + '@item.team.teamName',
                             pic: '@item.playerBackground.imageUrl', 
                             stats: {}
-                        };           
+                        });           
                     </script>
                         @foreach (var stat in item.statsList)
                         {
-
                             <script type="text/javascript">  
-                                arrPlayers[@item.player.playerId].stats[@stat.statId] = @stat.statAmt;
+                                arrPlayers[arrPlayers.length - 1].stats[@stat.statId] = @stat.statAmt;
                             </script>
                             <td>
                                 @stat.statAmt
-                            </td>
-                            
-                        }
-                    
-                        
-                            
-                           
-                        
+                            </td>   
+                        }  
                 </tr>
             }
-            
-        
-            
             </tbody>  
-        </table>
-        
-        
-        
+        </table>        
     </div>
-    <ul class="pagination pagination-sm" id="pager" style="display:none;">
-        </ul>
-    <!--div id="divPlayerPreview" class="col-lg-4  col-md-4" style="display: inline-block; ">
-        <div>Preview:</div>
-        <div class="playerPreview">
-            <div id="previewName"></div>
-            <div style="width:100%;">
-                <img id="previewImage" width="200" height="200" />
-            </div>
-            <div>
-
-            </div>
-        </div>
-    </!--div-->
+    <script type="text/javascript">    
+    @for(var i = 10; i < Model.Count(); i++)
+    {
+        var item = Model.ElementAt(i);
+        <text>          
+            arrPlayers.push({
+                playerId: @item.player.playerId,
+                name: '@item.player.playerName',
+                position: '@item.player.position', 
+                team: '@item.team.geoName' + ' ' + '@item.team.teamName',
+                pic: '@item.playerBackground.imageUrl', 
+                stats: {}
+            });               
+        </text>       
+        foreach (var stat in item.statsList)
+        {          
+            @:arrPlayers[arrPlayers.length - 1].stats[@stat.statId] = @stat.statAmt;                                      
+        }  
+        
+    }           
+    </script> 
+    <ul class="pagination pagination-sm" id="pager" style="display:block;">
+        <li class="disabled"><a onclick="Pager('first')"><<</a></li>
+        <li class="disabled"><a onclick="Pager('prev')"><</a></li>
+        <li class=""><a onclick="Pager('next')">></a></li>
+        <li class=""><a onclick="Pager('last')">>></a></li>
+    </ul>
 </div>
 
 <div id="divPlayerDragImage"><img id="imgPlayerDrag" /></div>
 
-
-
-
-
-
-
+}
 <script>
+    console.log('Load time: ' + (new Date() - timer));
     
-    $(function () {
-        var tableLen = $('table').find('tr.success').length;
-        var html = '<li class="disabled"><a onclick="page(next)">«</a></li>';
-        html += '<li class="active"><a onclick="page(this)">1</a></li>';
-        for (var i = 2; i < parseInt(tableLen / 10) + 1; i++)
-            html += '<li ><a  onclick="page(this)">' + i + '</a></li>';
-        html += '<li><a onclick="page(prev)">»</a></li>';
-
-        $('#pager').html(html);
-
-        for (var i = 0; i < 10; i++)
-            $('table').find('tr.success').eq(i).show();
-
-
-        
-    });
-
-    /*
-    $(function () {
-        var args = {};
-        InitFreezingScrollTable('tablePlayers', args);
-
-    });
-    */
-
-    function page(ptr)
-    {
-        if (ptr == 'next')
-        {
-            return;
-        }
-        if (ptr == 'prev')
-        {
-            return;
-        }
-
-
-        $('#pager').find('li').removeClass('active');
-        $(ptr).addClass('active');
-        var num = parseInt($(ptr).text());
-        var $rows = $('table').find('tr.success');
-        $rows.hide(); 
-        for (var i = (num - 1) * 10; i < num * 10; i++)
-            $rows.eq(i).show();
-    }
-
-    /*
-    $('tr.playerRow').on('click', function()
-    {
-        var pid = $(this).attr('pid');
-        $('#previewImage').prop('src', arrPlayers[pid].pic);
-        $('#previewName').text(arrPlayers[pid].name);
-
-    });
-    */
-    
-    var dragging = false;
-    var dragPID = -1;
-    var $dragImage = $('#imgPlayerDrag');
-    $('img.dragIcon').on('mousedown', function (e)
-    {           
-        e.preventDefault();             
-        dragPID = $(this).closest('tr').attr('pid');
-        var firstEmpty = -1;
-        for (var i = 0; i < 5 && firstEmpty < 0; i++)
-        {
-            if (!$('#playerCompare_' + i).hasClass('hasPlayer'))
-                firstEmpty = i;
-        }
-        if (firstEmpty >= 0)
-        {
-            dragging = true;
-            $dragImage.closest('div').show();
-            $dragImage.prop('src', arrPlayers[dragPID].pic);
-            $dragImage.css('top', e.pageY-2).css('left', e.pageX-32);
-            
-        }
-    });
-
-    $(body).on('mouseup', '#divComparePlayers', function (e)
-    {
-        // exit if invalid drag
-        if (!dragging || dragPID < 0)
-            return;
-        
-
-        
-        
-        
-        var $block = $(e.target).closest('div.playerCompareBlock');
-
-        
-        for(var i = 0; i < 5; i++)
-        {      
-            var pid = $('div.playerCompareBlock').eq(i).attr('PID')
-            if(pid > 0 && arrPlayers[dragPID].position != arrPlayers[pid].position)
-            {       
-                alert('You cannot compare players from different positions.');
-                dragPID = -1;
-                dragging = false;
-
-                $dragImage.closest('div').hide();
-                return;
-            }
-
-            if(pid == dragPID)
-            {
-                alert('Player already on list.');
-                dragPID = -1;
-                dragging = false;
-
-                $dragImage.closest('div').hide();
-                return;
-            }
-        }
-       
-        var img = '<img src="' + arrPlayers[dragPID].pic + '" class="comparePlayerImage" width="150" height="150"/>';
-        $block.attr('PID', dragPID);
-        $block.find('div.comparePlayerName').text(arrPlayers[dragPID].name + ' - ' + arrPlayers[dragPID].position);
-        $block.find('div.comparePlayerImage').html(img);
-        $block.addClass('hasPlayer');
-        $block.find('a.compareRemoveButton').show();
-        $block.find('input').val(dragPID);
-
-        dragPID = -1;
-        dragging = false;
-
-        $dragImage.closest('div').hide();
-    });
-
-    $(body).on('mousemove', function(e)
-    {
-        if(!dragging)
-            return;
-        $dragImage.css('top', e.pageY-2).css('left', e.pageX-32);
-
-    });
-
-    $('a.compareRemoveButton').on('click', function(e)
-    {
-        var $block = $(e.target).closest('div.playerCompareBlock');
-        var html = '<div class="divDropHere">Drop Player Here</div>';
-
-        $block.attr('PID', -1);
-        $block.find('div.comparePlayerName').text('');
-        $block.find('div.comparePlayerImage').html(html);
-        $block.removeClass('hasPlayer');
-        $block.find('a.compareRemoveButton').hide();
-        $block.find('input').val(-1);
-
-        
-
-    });
-
-
-    
-
-    /*
-    var table = $('#tablePlayers').DataTable( {
-        "sScrollX" : "100%", //Scroll
-        "bAutoWidth" : false,
-        "bScrollCollapse" : true,
-        "bPaginate" : false,
-        "bSort" : false,
-        "bFilter": false,
-        "sInfo" : "",
-        "sInfoEmpty" : ""
-
-    });
-    new $.fn.dataTable.FixedColumns(table, {
-        "iLeftColumns" : 4
-    });
-    */
 
     
 </script>

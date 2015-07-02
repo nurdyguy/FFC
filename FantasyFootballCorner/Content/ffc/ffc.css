@@ -152,21 +152,88 @@ tr.statRow td.stat
     text-align:center;
 }
 
-img.imgGraphIcon
+img.imgGraphIcon, img.imgTableIcon
+{   
+    height:50px;
+    width:50px;
+    border:solid 3px black;
+    z-index:200;
+}
+
+img.imgGraphIcon:hover, img.imgTableIcon:hover
 {
+    border:solid 3px white;
+}
+
+img.imgGraphIcon.active, img.imgTableIcon.active
+{
+    border:solid 3px #A3A3A3;
+}
+
+#divGraphOverlay
+{
+    display:none;
     position:absolute;
-    left:-100px;
-    top:75px;
-    height:40px;
-    width:40px;
+    z-index:500;
+    border-radius:20px;
+    width:85%;
+    height:65%;
+    top:0px;
+    left:0px;
+    background-color:#707070 ;
+	filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity:0.5;
+}
+
+#statGraph
+{
+    display:none;
+    position:absolute;
+    height:60%;
+    width:80%;
+    top:0px;
+    left:0px;
+    margin-top:3%;
+    margin-left:3%;
+    border:2px solid #3366CC;
+
+    background-color:#000000;
     z-index:999;
+	
+
+}
+
+#pager
+{
+    cursor:pointer;
+}
+
+.sortedAsc 
+{
+    display:inline-block;
+    height:20px;
+    width:20px;
+    margin-bottom:-5px;
+    background-image:url("../../Images/sortedAscArrow.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position:bottom center;
 }
 
 
+.sortedDesc 
+{
+    display:inline-block;
+    height:20px;
+    width:20px;
+    margin-bottom:-5px;
+    background-image:url("../../Images/sortedDescArrow.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position:bottom center;
 
-
-
-
+}
 
 
 

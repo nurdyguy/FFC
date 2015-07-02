@@ -55,7 +55,7 @@ namespace FantasyFootballCorner.ViewModels
         //  DEF stats 1, 45-69
 
 
-
+        /*
         // GP
         [Display(Name = "GP")]
         public double statCat_1 { get; set; }
@@ -248,9 +248,9 @@ namespace FantasyFootballCorner.ViewModels
         [Display(Name = "50+ Yd Fumb Ret TD")]
         public double statCat_91 { get; set; }
         
-        /*          moved to WeekStat model         */
+                  moved to WeekStat model         */
         
-        
+       
          
          
     }

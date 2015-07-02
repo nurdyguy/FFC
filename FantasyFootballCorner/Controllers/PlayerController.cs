@@ -265,7 +265,7 @@ namespace FantasyFootballCorner.Controllers
         {
             string name = "";
             string position = "";
-
+            List<Player> pList;
             if (!String.IsNullOrEmpty(Request.Form["name"]))
             {
                 name = Request.Form["name"].ToUpper();
@@ -279,13 +279,40 @@ namespace FantasyFootballCorner.Controllers
                 }
                 // to do--- if player match returns players of diff position 
                 //      then use default cats list
-                position = (from p in db.Players 
-                            where p.playerName == name
-                            select p.position).First();
+                pList = (from p in db.Players 
+                    where p.playerName.Contains(name)
+                    select p).ToList();
+                if (pList.Count() == 0)
+                {
+                    
+                }
+                else
+                    if (pList.Count() == 1)
+                    {
+                        position = pList.First().position;
+                    }
+                    else
+                    {
+                        // force default stat list
+                        position = "xx";
+                    }
             }
             else
             {
                 position = Request.Form["position"];
+                if (name == "")
+                {
+                    pList = (from p in db.Players
+                             where p.position == position
+                             select p).ToList();
+                }
+                else
+                {
+                    pList = (from p in db.Players
+                             where p.position == position && p.playerName.Contains(name)
+                             select p).ToList();
+                }
+                
             }
 
             List<int> cats = new List<int>();
@@ -330,11 +357,11 @@ namespace FantasyFootballCorner.Controllers
                            where cats.Contains(sc.statId)
                            select sc).ToList();
 
-            var pStats = (from ps in db.PlayerStats 
+            var pStats = (from p in pList
+                            join ps in db.PlayerStats on p.playerId equals ps.playerId
                             join pb in db.PlayerBackgrounds on ps.playerId equals pb.playerID
-                            join t in db.Teams on ps.player.teamAbbre equals t.teamAbbre 
-                            where (ps.player.playerName == name || ps.player.position == position)
-                                && cats.Contains(ps.statCat.statId) && ps.season == 2014
+                            join t in db.Teams on ps.player.teamAbbre equals t.teamAbbre
+                            where cats.Contains(ps.statCat.statId) && ps.season == 2014
                           group ps by new { ps.player, pb, t, ps.statCat } into g
                           orderby g.Key.player.playerId
                           select new

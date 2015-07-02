@@ -65,7 +65,10 @@ function ExpandStatRow(ptr)
         if (!$table.hasClass('loaded'))
             LoadWeekStats($table);
         else
+        {
             $table.closest('tbody').toggle();
+            $row.find('div.divGraphIcon').toggle();
+        }
     }
 
 }
@@ -84,7 +87,7 @@ function GetWeekStatsData($table)
     
     p = JSON.stringify(p);
     //var url = 'http://localhost:49163/Player/CompareWeeklyStats';
-    var url = 'http://www.fantasyfootballcorner.com/Player/CompareWeeklyStats';
+    var url = 'CompareWeeklyStats';
     $.ajax(
     {
         url: url,
@@ -174,6 +177,77 @@ function LoadWeekStats($table)
 
 
     $table.closest('tbody').show();
+    $table.closest('tr.statRow').find('div.divGraphIcon').toggle();
+}
+
+function ShowGraph(ptr)
+{
+    var $row = $(ptr).closest('tr.statRow');
+    var statId = $row.attr('statId');
+    var arrGraphSeries = [];
+    for (var i = 0; i < arrPlayers.length; i++)
+    {
+        arrGraphSeries.push({name: arrPlayers[i].name, data: [] });
+        for (var w = 1; w <= 17; w++)
+        {
+            if(arrPlayers[i].stats[w][1] == 1)
+                arrGraphSeries[arrGraphSeries.length - 1].data.push([w, arrPlayers[i].stats[w][statId]]);
+        }
+    }
+
+    $row.find('img.imgTableIcon').removeClass('active');
+    $row.find('img.imgGraphIcon').addClass('active');
+    $row.find('div.divStatGraphWeeklyData').show()
+    $row.find('div.divStatTableWeeklyData').hide()
+    $(function ()
+    {
+        $row.find('div.divStatGraphWeeklyData').highcharts({
+            chart: {
+                type: 'spline',
+                backgroundColor: "#A3A3A3"
+            },
+            title: {
+                text: 'Weely Stats Comparison'
+            },
+            xAxis: {
+                type: 'linear',
+                title: {
+                    text: 'Week'
+                },
+                ordinal: false,
+            },
+            yAxis: {
+                title: {
+                    text: 'Total Passing yards'
+                },
+                min: 0
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: ' {point.y:.2f} '
+            },
+
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            series: arrGraphSeries
+        });
+    });
+
+    
+}
+
+function ShowTable(ptr)
+{
+    var $row = $(ptr).closest('tr.statRow');
+    $row.find('img.imgGraphIcon').removeClass('active');
+    $row.find('img.imgTableIcon').addClass('active');
+    $row.find('div.divStatGraphWeeklyData').hide();
+    $row.find('div.divStatTableWeeklyData').show();
 }
 
 // for highcharts

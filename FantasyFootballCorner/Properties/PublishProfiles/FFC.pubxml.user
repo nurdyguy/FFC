@@ -60,7 +60,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/07/2015 11:10:08</publishTime>
     </File>
     <File Include="bin/FantasyFootballCorner.dll">
-      <publishTime>06/26/2015 17:02:21</publishTime>
+      <publishTime>07/01/2015 14:36:50</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
       <publishTime>05/07/2015 11:10:10</publishTime>
@@ -384,7 +384,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/11/2015 15:51:36</publishTime>
     </File>
     <File Include="Content/ffc/ffc.css">
-      <publishTime>06/26/2015 16:34:34</publishTime>
+      <publishTime>07/01/2015 13:08:46</publishTime>
     </File>
     <File Include="Content/ffc/freezing_scroll_table.css">
       <publishTime>06/12/2015 13:33:58</publishTime>
@@ -533,6 +533,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/bullet.png">
       <publishTime>05/07/2015 11:09:58</publishTime>
     </File>
+    <File Include="Images/close.gif">
+      <publishTime>06/29/2015 12:52:21</publishTime>
+    </File>
     <File Include="Images/collapse.png">
       <publishTime>06/18/2015 15:55:30</publishTime>
     </File>
@@ -578,6 +581,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/orderedList9.png">
       <publishTime>05/07/2015 11:09:58</publishTime>
     </File>
+    <File Include="Images/sortedAscArrow.png">
+      <publishTime>07/01/2015 10:10:22</publishTime>
+    </File>
+    <File Include="Images/sortedDescArrow.png">
+      <publishTime>07/01/2015 10:07:35</publishTime>
+    </File>
+    <File Include="Images/table_icon.jpg">
+      <publishTime>06/29/2015 13:20:47</publishTime>
+    </File>
     <File Include="Misc/seed data.xlsx">
       <publishTime>06/25/2015 13:05:59</publishTime>
     </File>
@@ -585,7 +597,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/25/2015 13:08:39</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>06/22/2015 15:02:07</publishTime>
+      <publishTime>06/29/2015 11:26:30</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>05/07/2015 12:15:54</publishTime>
@@ -669,7 +681,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2015 13:41:14</publishTime>
     </File>
     <File Include="Scripts/ffc_js/player_compare.js">
-      <publishTime>06/26/2015 17:02:10</publishTime>
+      <publishTime>06/29/2015 14:08:56</publishTime>
+    </File>
+    <File Include="Scripts/ffc_js/player_index.js">
+      <publishTime>07/01/2015 13:21:54</publishTime>
     </File>
     <File Include="Scripts/Highcharts/gfx/vml-radial-gradient.png">
       <publishTime>06/17/2015 12:15:11</publishTime>
@@ -888,7 +903,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/26/2015 11:58:15</publishTime>
     </File>
     <File Include="Views/Player/Compare.cshtml">
-      <publishTime>06/26/2015 16:33:46</publishTime>
+      <publishTime>06/29/2015 14:07:10</publishTime>
     </File>
     <File Include="Views/Player/Create.cshtml">
       <publishTime>05/10/2015 17:46:16</publishTime>
@@ -903,7 +918,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/07/2015 12:22:02</publishTime>
     </File>
     <File Include="Views/Player/Index.cshtml">
-      <publishTime>06/26/2015 09:02:12</publishTime>
+      <publishTime>07/01/2015 14:35:34</publishTime>
     </File>
     <File Include="Views/Player/UpdatePlayers.cshtml">
       <publishTime>06/10/2015 13:06:50</publishTime>
@@ -984,7 +999,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/07/2015 11:09:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/26/2015 17:02:22</publishTime>
+      <publishTime>07/01/2015 14:36:51</publishTime>
     </File>
     <File Include="Web_orig.config">
       <publishTime>06/22/2015 11:26:15</publishTime>

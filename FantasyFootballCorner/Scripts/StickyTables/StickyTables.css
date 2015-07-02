@@ -12,10 +12,16 @@ div.stickyDivWrapper
     position:relative;
 }
 
-div.stickyDivScroll
+div.stickyHorizScroll
 {
     height:100%;
     overflow-x:scroll;
+}
+
+div.stickyVertScroll
+{
+    height:100%;
+    overflow-y:scroll;
 }
 
 table.stickyTable
@@ -32,11 +38,30 @@ table.stickyLeftTable
     border-right:1px solid navy;
 }
 
+div.
 
+/*
+stickyCols: 0,                  
+stickyRows: 0,                  
+stickyColLock: 'left',          
+stickyRowLock: 'top',           
+stickyHeader: false,            
+horizScroll: false,             
+vertScroll: false,              
 
+colorStickyCols: false,         
+stickyColColor: '#000000',      
+colorStickyRows: false,         
+stickyRowColor: '#000000',
 
+borderStickyCols: false,
+stickyColBorderColor: '#000000',
+stickyColBorderThickness: 0,
+borderStickyRows: false,
+stickyRowBorderColor: '#000000',
+stickyRowBorderThickness: 0
 
-
+*/
 
 
 
